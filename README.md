@@ -1,5 +1,5 @@
 # pyspatialopt
-An open source python library for spatial optimization modeling
+An open source python library for spatial optimization modeling. Be sure to check out the [wiki pages](https://github.com/apulverizer/pyspatialopt/wiki)
 
 This library can be used to generate and solve spatial optimization models (in the form of .lp or .mps files) from spatial data. 
 It has bindings for [arcpy](http://desktop.arcgis.com/en/arcmap/latest/analyze/arcpy/what-is-arcpy-.htm) and [pyqgis](http://docs.qgis.org/testing/en/docs/pyqgis_developer_cookbook/) to generate the coverage configurations which are then used to generate and solve various optimization models using [PuLP](http://www.coin-or.org/PuLP/).
