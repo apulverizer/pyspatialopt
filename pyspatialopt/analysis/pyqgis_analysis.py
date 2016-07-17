@@ -8,15 +8,19 @@ import qgis
 from pyspatialopt import version
 
 
-def generate_query(unique_ids, unique_field_name):
+def generate_query(unique_ids, unique_field_name, wrap_values_in_quotes=False):
     """
     Generates a select or definition query that can applied to the input layers
     :param unique_ids: (list) A list of ids to query
     :param unique_field_name: (string) The name of field that the ids correspond to
-    :return:
+    :param wrap_values_in_quotes: (bool) Should the ids be wrapped in quotes (if unique_field_name is string)
+    :return: (string) A query string that can be applied to a layer
     """
     if unique_ids:
-        query = "{} in (-1,{})".format(unique_field_name, ",".join(map(str, unique_ids)))
+        if wrap_values_in_quotes:
+            query = "{} in (-1,{})".format(unique_field_name, ",".join("'{0}'".format(w) for w in unique_ids))
+        else:
+            query = "{} in (-1,{})".format(unique_field_name, ",".join(unique_ids))
     else:
         query = "{} in (-1)".format(unique_field_name)
     return query

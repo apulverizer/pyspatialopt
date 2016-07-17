@@ -6,9 +6,9 @@ def get_ids(problem, variable_name, threshold=1.0, delineator="$"):
     helper to get the variables
     :param problem: (pulp problem) The solved problem to extract results from
     :param variable_name: (string) The variable name to extract
-    :param threshold: (float) The minimum value to use when chooing ids
+    :param threshold: (float) The minimum value to use when choosing ids
     :param delineator: (string) The string used to split demand and facilities from ids
-    :return:
+    :return: (array) A array of the ids (as strings) that meet or exceed the threshold
     """
     ids = []
     for var in problem.variables():
