@@ -1,10 +1,14 @@
 # pyspatialopt
-An open source python library for spatial optimization modeling. Be sure to check out the [wiki pages](https://github.com/apulverizer/pyspatialopt/wiki)
+An open source python library for spatial optimization modeling. Be sure to check out the [wiki pages](https://github.com/apulverizer/pyspatialopt/wiki) for more information.
 
 This library can be used to generate and solve spatial optimization models (in the form of .lp or .mps files) from spatial data. 
 It has bindings for [arcpy](http://desktop.arcgis.com/en/arcmap/latest/analyze/arcpy/what-is-arcpy-.htm) and [pyqgis](http://docs.qgis.org/testing/en/docs/pyqgis_developer_cookbook/) to generate the coverage configurations which are then used to generate and solve various optimization models using [PuLP](http://www.coin-or.org/PuLP/).
 
 Currently the main focus is on coverage modelling though other optimization models may be added over time. Coverage modeling is generally used to find the best spatial configuration of a set of facilities that provide some level of service to units of demand. It is often necessary to “cover” demand within a prescribed time or distance. For example, say the Salt Lake City Fire Department is looking to reduce the number of fire stations and wants to know how many fire stations are necessary to reach 90% of the houses within 5 minutes. We can use the Threshold Covering Problem to solve this problem. The facility layer would consist of the service area of each existing fire station. The demand layer would consist of the locations of the houses (or block group housing data). After solving the model, we can determine how many stations are required, the coverage provided by optimal configuration, and we can map the results. 
+
+Another simple use case is shown in the image below. Suppose we have 7 possible facility locations (represented by the black triangles) and need to locate 5 facilities so that we get the most coverage. We can apply the MCLP to find the best configuration that reaches the most people (black-outlined polygons, Census block groups that have population). The service areas shown in green represent the 5 facilities that were selected by the model. The service areas shown in red, represent the 2 facilities that were not chosen. In this simple case it might be easy enough to try every possible configuration, but when we start to have hundreds to thousands of facilities, it becomes infeasible and an optimization model must be used.
+
+![alt MCLP example](https://github.com/apulverizer/pyspatialopt/wiki/img/mclp_example.JPG "MCLP Example")
 
 ## Models
 
@@ -35,6 +39,8 @@ The following models are supported:
 7. Do something with the results (Map them, get stats...)
 
 #Example usage
+The map shown above was derived from the results of this example.
+
 ```python
     import arcpy
     import pulp
