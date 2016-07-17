@@ -8,10 +8,9 @@ setup(name='PySpatialOpt',
     url='https://github.com/apulverizer/pyspatialopt',
     packages=['pyspatialopt', 'pyspatialopt.models',
               'pyspatialopt/analysis'],
-    license='Apache',
+    license='MIT',
     install_requires=['pulp>=1.6.1'],
     classifiers=[
-      'Development Status :: 5 - Production/Stable',
       'Intended Audience :: Developers/Researchers',
       'Programming Language :: Python :: 2.7'
     ]
