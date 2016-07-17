@@ -1,10 +1,13 @@
 # -*- coding: UTF-8 -*-
-import arcpy
 import logging
-import pulp
 import sys
-from models import covering, utilities
-from analysis import arcpy_analysis
+
+import arcpy
+import pulp
+from pyspatialopt.analysis import arcpy_analysis
+from pyspatialopt.models import utilities
+
+from pyspatialopt.models import covering
 
 if __name__ == "__main__":
     # Initialize a logger so we get formatted output
@@ -43,7 +46,7 @@ if __name__ == "__main__":
     logger.info("Extracting results")
     ids = utilities.get_ids(mclp, "facility_service_areas")
     # Generate a query that could be used as a definition query or selection in arcpy
-    select_query = arcpy_analysis.generate_query(ids, unique_field_name="FID")
+    select_query = arcpy_analysis.generate_query(ids, unique_field_name="ORIG_ID")
     logger.info("Output query to use to generate maps is: {}".format(select_query))
     # Determine how much demand is covered by the results
     facility_service_areas_fl.definitionQuery = select_query

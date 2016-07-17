@@ -1,16 +1,17 @@
 # -*- coding: UTF-8 -*-
 import logging
+import os
+import sys
 import pulp
 import qgis
-import sys
-from analysis import pyqgis_analysis
-from models import covering, utilities
+from pyspatialopt.models import covering, utilities
+from pyspatialopt.analysis import pyqgis_analysis
 
 if __name__ == "__main__":
     # supply path to qgis install location
     qgs = qgis.core.QgsApplication(sys.argv, True)
     # Change this to your <QGIS installation paths>\apps\qgis
-    qgs.setPrefixPath(r"C:\Program Files (x86)\QGIS Essen\apps\qgis", True)
+    qgs.setPrefixPath(os.path.expandvars(r"$QGIS_PATH"), True)
     qgs.initQgis()
 
     # Set the logger

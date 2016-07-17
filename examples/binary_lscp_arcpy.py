@@ -1,10 +1,13 @@
 # -*- coding: UTF-8 -*-
-import arcpy
 import logging
-import pulp
 import sys
-from models import covering, utilities
-from analysis import arcpy_analysis
+
+import arcpy
+import pulp
+from pyspatialopt.analysis import arcpy_analysis
+from pyspatialopt.models import utilities
+
+from pyspatialopt.models import covering
 
 if __name__ == "__main__":
     # Initialize a logger so we get formatted output

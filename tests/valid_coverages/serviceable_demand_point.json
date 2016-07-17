@@ -1,0 +1,645 @@
+{
+    "demand": {
+        "49035100100": {
+            "serviceableDemand": 1529
+        }, 
+        "49035100200": {
+            "serviceableDemand": 1289
+        }, 
+        "49035100306": {
+            "serviceableDemand": 5062
+        }, 
+        "49035100307": {
+            "serviceableDemand": 5223
+        }, 
+        "49035100308": {
+            "serviceableDemand": 4222
+        }, 
+        "49035100500": {
+            "serviceableDemand": 6379
+        }, 
+        "49035100600": {
+            "serviceableDemand": 6556
+        }, 
+        "49035100700": {
+            "serviceableDemand": 2704
+        }, 
+        "49035100800": {
+            "serviceableDemand": 2491
+        }, 
+        "49035101000": {
+            "serviceableDemand": 2959
+        }, 
+        "49035101101": {
+            "serviceableDemand": 1969
+        }, 
+        "49035101102": {
+            "serviceableDemand": 3422
+        }, 
+        "49035101200": {
+            "serviceableDemand": 3877
+        }, 
+        "49035101400": {
+            "serviceableDemand": 4816
+        }, 
+        "49035101500": {
+            "serviceableDemand": 3214
+        }, 
+        "49035101600": {
+            "serviceableDemand": 3628
+        }, 
+        "49035101700": {
+            "serviceableDemand": 3534
+        }, 
+        "49035101800": {
+            "serviceableDemand": 3086
+        }, 
+        "49035101900": {
+            "serviceableDemand": 2497
+        }, 
+        "49035102000": {
+            "serviceableDemand": 2620
+        }, 
+        "49035102100": {
+            "serviceableDemand": 1457
+        }, 
+        "49035102300": {
+            "serviceableDemand": 2760
+        }, 
+        "49035102500": {
+            "serviceableDemand": 3460
+        }, 
+        "49035102600": {
+            "serviceableDemand": 4420
+        }, 
+        "49035102701": {
+            "serviceableDemand": 5099
+        }, 
+        "49035102702": {
+            "serviceableDemand": 3835
+        }, 
+        "49035102801": {
+            "serviceableDemand": 6106
+        }, 
+        "49035102802": {
+            "serviceableDemand": 5063
+        }, 
+        "49035102900": {
+            "serviceableDemand": 4500
+        }, 
+        "49035103000": {
+            "serviceableDemand": 2954
+        }, 
+        "49035103100": {
+            "serviceableDemand": 4163
+        }, 
+        "49035103200": {
+            "serviceableDemand": 4536
+        }, 
+        "49035103300": {
+            "serviceableDemand": 4267
+        }, 
+        "49035103400": {
+            "serviceableDemand": 4080
+        }, 
+        "49035103500": {
+            "serviceableDemand": 4045
+        }, 
+        "49035103600": {
+            "serviceableDemand": 2670
+        }, 
+        "49035103700": {
+            "serviceableDemand": 2581
+        }, 
+        "49035103800": {
+            "serviceableDemand": 2382
+        }, 
+        "49035103900": {
+            "serviceableDemand": 3786
+        }, 
+        "49035104000": {
+            "serviceableDemand": 3267
+        }, 
+        "49035104100": {
+            "serviceableDemand": 2968
+        }, 
+        "49035104200": {
+            "serviceableDemand": 6367
+        }, 
+        "49035104300": {
+            "serviceableDemand": 2821
+        }, 
+        "49035104400": {
+            "serviceableDemand": 2010
+        }, 
+        "49035104700": {
+            "serviceableDemand": 4774
+        }, 
+        "49035104800": {
+            "serviceableDemand": 5022
+        }, 
+        "49035104900": {
+            "serviceableDemand": 3147
+        }, 
+        "49035110102": {
+            "serviceableDemand": 4427
+        }, 
+        "49035110103": {
+            "serviceableDemand": 3620
+        }, 
+        "49035110104": {
+            "serviceableDemand": 5288
+        }, 
+        "49035110200": {
+            "serviceableDemand": 5077
+        }, 
+        "49035110300": {
+            "serviceableDemand": 5477
+        }, 
+        "49035110401": {
+            "serviceableDemand": 3476
+        }, 
+        "49035110402": {
+            "serviceableDemand": 3653
+        }, 
+        "49035110500": {
+            "serviceableDemand": 6164
+        }, 
+        "49035110600": {
+            "serviceableDemand": 5376
+        }, 
+        "49035110701": {
+            "serviceableDemand": 3628
+        }, 
+        "49035110702": {
+            "serviceableDemand": 4896
+        }, 
+        "49035110800": {
+            "serviceableDemand": 5425
+        }, 
+        "49035110900": {
+            "serviceableDemand": 4562
+        }, 
+        "49035111001": {
+            "serviceableDemand": 4470
+        }, 
+        "49035111002": {
+            "serviceableDemand": 5659
+        }, 
+        "49035111101": {
+            "serviceableDemand": 6279
+        }, 
+        "49035111102": {
+            "serviceableDemand": 6104
+        }, 
+        "49035111103": {
+            "serviceableDemand": 5903
+        }, 
+        "49035111201": {
+            "serviceableDemand": 2761
+        }, 
+        "49035111202": {
+            "serviceableDemand": 4687
+        }, 
+        "49035111302": {
+            "serviceableDemand": 5979
+        }, 
+        "49035111304": {
+            "serviceableDemand": 3676
+        }, 
+        "49035111305": {
+            "serviceableDemand": 3872
+        }, 
+        "49035111306": {
+            "serviceableDemand": 2536
+        }, 
+        "49035111400": {
+            "serviceableDemand": 6555
+        }, 
+        "49035111500": {
+            "serviceableDemand": 1794
+        }, 
+        "49035111600": {
+            "serviceableDemand": 7472
+        }, 
+        "49035111701": {
+            "serviceableDemand": 5194
+        }, 
+        "49035111702": {
+            "serviceableDemand": 4361
+        }, 
+        "49035111801": {
+            "serviceableDemand": 5276
+        }, 
+        "49035111802": {
+            "serviceableDemand": 2408
+        }, 
+        "49035111903": {
+            "serviceableDemand": 3916
+        }, 
+        "49035111904": {
+            "serviceableDemand": 3509
+        }, 
+        "49035111905": {
+            "serviceableDemand": 3583
+        }, 
+        "49035111906": {
+            "serviceableDemand": 4186
+        }, 
+        "49035112001": {
+            "serviceableDemand": 3281
+        }, 
+        "49035112002": {
+            "serviceableDemand": 4505
+        }, 
+        "49035112100": {
+            "serviceableDemand": 7264
+        }, 
+        "49035112201": {
+            "serviceableDemand": 5249
+        }, 
+        "49035112202": {
+            "serviceableDemand": 3909
+        }, 
+        "49035112301": {
+            "serviceableDemand": 3823
+        }, 
+        "49035112302": {
+            "serviceableDemand": 3573
+        }, 
+        "49035112402": {
+            "serviceableDemand": 6449
+        }, 
+        "49035112403": {
+            "serviceableDemand": 4473
+        }, 
+        "49035112404": {
+            "serviceableDemand": 3903
+        }, 
+        "49035112501": {
+            "serviceableDemand": 3735
+        }, 
+        "49035112502": {
+            "serviceableDemand": 6155
+        }, 
+        "49035112503": {
+            "serviceableDemand": 4633
+        }, 
+        "49035112604": {
+            "serviceableDemand": 5101
+        }, 
+        "49035112605": {
+            "serviceableDemand": 6795
+        }, 
+        "49035112608": {
+            "serviceableDemand": 5276
+        }, 
+        "49035112609": {
+            "serviceableDemand": 5553
+        }, 
+        "49035112610": {
+            "serviceableDemand": 4316
+        }, 
+        "49035112611": {
+            "serviceableDemand": 6655
+        }, 
+        "49035112612": {
+            "serviceableDemand": 4096
+        }, 
+        "49035112613": {
+            "serviceableDemand": 4915
+        }, 
+        "49035112614": {
+            "serviceableDemand": 3380
+        }, 
+        "49035112615": {
+            "serviceableDemand": 2419
+        }, 
+        "49035112616": {
+            "serviceableDemand": 4533
+        }, 
+        "49035112617": {
+            "serviceableDemand": 3551
+        }, 
+        "49035112618": {
+            "serviceableDemand": 3261
+        }, 
+        "49035112619": {
+            "serviceableDemand": 3110
+        }, 
+        "49035112700": {
+            "serviceableDemand": 4821
+        }, 
+        "49035112804": {
+            "serviceableDemand": 5602
+        }, 
+        "49035112805": {
+            "serviceableDemand": 5343
+        }, 
+        "49035112810": {
+            "serviceableDemand": 7066
+        }, 
+        "49035112812": {
+            "serviceableDemand": 5670
+        }, 
+        "49035112813": {
+            "serviceableDemand": 5449
+        }, 
+        "49035112814": {
+            "serviceableDemand": 4696
+        }, 
+        "49035112815": {
+            "serviceableDemand": 5044
+        }, 
+        "49035112816": {
+            "serviceableDemand": 4852
+        }, 
+        "49035112817": {
+            "serviceableDemand": 6374
+        }, 
+        "49035112818": {
+            "serviceableDemand": 3840
+        }, 
+        "49035112819": {
+            "serviceableDemand": 7040
+        }, 
+        "49035112820": {
+            "serviceableDemand": 7344
+        }, 
+        "49035112821": {
+            "serviceableDemand": 6257
+        }, 
+        "49035112822": {
+            "serviceableDemand": 4709
+        }, 
+        "49035112823": {
+            "serviceableDemand": 4493
+        }, 
+        "49035112904": {
+            "serviceableDemand": 6731
+        }, 
+        "49035112905": {
+            "serviceableDemand": 5391
+        }, 
+        "49035112907": {
+            "serviceableDemand": 4648
+        }, 
+        "49035112912": {
+            "serviceableDemand": 2769
+        }, 
+        "49035112913": {
+            "serviceableDemand": 5129
+        }, 
+        "49035112914": {
+            "serviceableDemand": 6293
+        }, 
+        "49035112916": {
+            "serviceableDemand": 4567
+        }, 
+        "49035112917": {
+            "serviceableDemand": 3864
+        }, 
+        "49035112918": {
+            "serviceableDemand": 5242
+        }, 
+        "49035112920": {
+            "serviceableDemand": 4309
+        }, 
+        "49035112921": {
+            "serviceableDemand": 3444
+        }, 
+        "49035113007": {
+            "serviceableDemand": 5005
+        }, 
+        "49035113008": {
+            "serviceableDemand": 6174
+        }, 
+        "49035113010": {
+            "serviceableDemand": 6343
+        }, 
+        "49035113011": {
+            "serviceableDemand": 5806
+        }, 
+        "49035113012": {
+            "serviceableDemand": 4854
+        }, 
+        "49035113013": {
+            "serviceableDemand": 4990
+        }, 
+        "49035113014": {
+            "serviceableDemand": 3930
+        }, 
+        "49035113016": {
+            "serviceableDemand": 6079
+        }, 
+        "49035113017": {
+            "serviceableDemand": 6689
+        }, 
+        "49035113019": {
+            "serviceableDemand": 5973
+        }, 
+        "49035113020": {
+            "serviceableDemand": 11672
+        }, 
+        "49035113101": {
+            "serviceableDemand": 7158
+        }, 
+        "49035113102": {
+            "serviceableDemand": 3892
+        }, 
+        "49035113105": {
+            "serviceableDemand": 4235
+        }, 
+        "49035113107": {
+            "serviceableDemand": 21591
+        }, 
+        "49035113108": {
+            "serviceableDemand": 4444
+        }, 
+        "49035113305": {
+            "serviceableDemand": 7665
+        }, 
+        "49035113306": {
+            "serviceableDemand": 6082
+        }, 
+        "49035113307": {
+            "serviceableDemand": 6979
+        }, 
+        "49035113308": {
+            "serviceableDemand": 5079
+        }, 
+        "49035113309": {
+            "serviceableDemand": 4928
+        }, 
+        "49035113310": {
+            "serviceableDemand": 3015
+        }, 
+        "49035113406": {
+            "serviceableDemand": 6746
+        }, 
+        "49035113407": {
+            "serviceableDemand": 10940
+        }, 
+        "49035113408": {
+            "serviceableDemand": 6644
+        }, 
+        "49035113409": {
+            "serviceableDemand": 5458
+        }, 
+        "49035113410": {
+            "serviceableDemand": 6508
+        }, 
+        "49035113411": {
+            "serviceableDemand": 2689
+        }, 
+        "49035113412": {
+            "serviceableDemand": 2847
+        }, 
+        "49035113413": {
+            "serviceableDemand": 5605
+        }, 
+        "49035113505": {
+            "serviceableDemand": 6796
+        }, 
+        "49035113509": {
+            "serviceableDemand": 6332
+        }, 
+        "49035113510": {
+            "serviceableDemand": 3251
+        }, 
+        "49035113511": {
+            "serviceableDemand": 3675
+        }, 
+        "49035113512": {
+            "serviceableDemand": 3510
+        }, 
+        "49035113513": {
+            "serviceableDemand": 5631
+        }, 
+        "49035113514": {
+            "serviceableDemand": 5741
+        }, 
+        "49035113515": {
+            "serviceableDemand": 5788
+        }, 
+        "49035113520": {
+            "serviceableDemand": 3983
+        }, 
+        "49035113521": {
+            "serviceableDemand": 6489
+        }, 
+        "49035113522": {
+            "serviceableDemand": 3293
+        }, 
+        "49035113523": {
+            "serviceableDemand": 6255
+        }, 
+        "49035113525": {
+            "serviceableDemand": 7102
+        }, 
+        "49035113526": {
+            "serviceableDemand": 5266
+        }, 
+        "49035113527": {
+            "serviceableDemand": 4566
+        }, 
+        "49035113528": {
+            "serviceableDemand": 5320
+        }, 
+        "49035113532": {
+            "serviceableDemand": 3177
+        }, 
+        "49035113533": {
+            "serviceableDemand": 4787
+        }, 
+        "49035113534": {
+            "serviceableDemand": 7303
+        }, 
+        "49035113535": {
+            "serviceableDemand": 7020
+        }, 
+        "49035113536": {
+            "serviceableDemand": 4158
+        }, 
+        "49035113537": {
+            "serviceableDemand": 3582
+        }, 
+        "49035113538": {
+            "serviceableDemand": 3277
+        }, 
+        "49035113539": {
+            "serviceableDemand": 4723
+        }, 
+        "49035113600": {
+            "serviceableDemand": 5291
+        }, 
+        "49035113701": {
+            "serviceableDemand": 4074
+        }, 
+        "49035113702": {
+            "serviceableDemand": 2760
+        }, 
+        "49035113801": {
+            "serviceableDemand": 5775
+        }, 
+        "49035113802": {
+            "serviceableDemand": 4015
+        }, 
+        "49035113803": {
+            "serviceableDemand": 8675
+        }, 
+        "49035113903": {
+            "serviceableDemand": 4933
+        }, 
+        "49035113904": {
+            "serviceableDemand": 5657
+        }, 
+        "49035113905": {
+            "serviceableDemand": 7316
+        }, 
+        "49035113906": {
+            "serviceableDemand": 3969
+        }, 
+        "49035113907": {
+            "serviceableDemand": 6838
+        }, 
+        "49035114000": {
+            "serviceableDemand": 1501
+        }, 
+        "49035114100": {
+            "serviceableDemand": 2389
+        }, 
+        "49035114200": {
+            "serviceableDemand": 4419
+        }, 
+        "49035114300": {
+            "serviceableDemand": 15965
+        }, 
+        "49035114500": {
+            "serviceableDemand": 6037
+        }, 
+        "49035114600": {
+            "serviceableDemand": 6998
+        }, 
+        "49035114700": {
+            "serviceableDemand": 4714
+        }, 
+        "49035114800": {
+            "serviceableDemand": 3550
+        }, 
+        "49035115106": {
+            "serviceableDemand": 7858
+        }, 
+        "49035115209": {
+            "serviceableDemand": 6110
+        }, 
+        "49035980000": {
+            "serviceableDemand": 0
+        }
+    }, 
+    "type": {
+        "mode": "serviceableDemand", 
+        "type": "binary"
+    }, 
+    "version": "0.0.1"
+}
