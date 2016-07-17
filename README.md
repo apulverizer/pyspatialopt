@@ -62,6 +62,20 @@ The following models are supported:
                                                        facility_service_areas_fl)
 ```
  
+#Installation
+
+**Note I have only tested the installation and funcationality of the library on Windows 10 though I see no reason why it won't work on \*nix and OSX systems.**
+
+1. Clone/Fork the repo locally
+2. Ensure that you have arcpy (ArcGIS) or pyqgis (QGIS) installed
+3. Ensure that you download and install from [here](http://www.coin-or.org/PuLP/) or from source at [github](https://github.com/coin-or/pulp)
+4. Run the setup.py script (```python setup.py install```)
+5. Set the $QGIS_PATH (if you plan to use QGIS) environment variable to point to the directory containing your QGIS installation
+6. Run the tests or examples to verify that it works. 
+
+**If you are using PyQGIS you need make sure you have your PYTHONPATH pointed to the required QGIS directories**
+ 
+ 
 #Notes
 This is a side project and I will try to respond to issues and make updates but the code is provided as-is with no guarantees. 
 
