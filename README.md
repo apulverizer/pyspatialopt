@@ -4,7 +4,10 @@ An open source python library for spatial optimization modeling
 This library can be used to generate and solve spatial optimization models (in the form of .lp or .mps files) from spatial data. 
 It has bindings for [arcpy](http://desktop.arcgis.com/en/arcmap/latest/analyze/arcpy/what-is-arcpy-.htm) and [pyqgis](http://docs.qgis.org/testing/en/docs/pyqgis_developer_cookbook/) to generate the coverage configurations which are then used to generate and solve various optimization models using [PuLP](http://www.coin-or.org/PuLP/).
 
-Currently the main focus is on coverage modelling though other optimization models may be added over time. 
+Currently the main focus is on coverage modelling though other optimization models may be added over time. Coverage modeling is generally used to find the best spatial configuration of a set of facilities that provide some level of service to units of demand. It is often necessary to “cover” demand within a prescribed time or distance. For example, say the Salt Lake City Fire Department is looking to reduce the number of fire stations and wants to know how many fire stations are necessary to reach 90% of the houses within 5 minutes. We can use the Threshold Covering Problem to solve this problem. The facility layer would consist of the service area of each existing fire station. The demand layer would consist of the locations of the houses (or block group housing data). After solving the model, we can determine how many stations are required, the coverage provided by optimal configuration, and we can map the results. 
+
+## Models
+
 The following models are supported:
 
  * Maximum Coverage Location Problem (MCLP) 
