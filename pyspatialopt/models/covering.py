@@ -492,3 +492,185 @@ def create_lscp_model(coverage_dict, model_file, delineator="$", ):
         prob += pulp.lpSum(to_sum) >= 1, "D{}".format(demand_id)
     prob.writeLP(model_file)
     return prob
+
+
+def create_traumah_model(coverage_dict, num_ad, num_tc, model_file, delineator="$"):
+    """
+    Creates a TRAUMAH (Trauma center and air depot location model) using the provided coverage and
+    parameters. Writes a .lp file which can be solved with Gurobi
+
+    Branas, C. C., MacKenzie, E. J., & ReVelle, C. S. (2000).
+    A trauma resource allocation model for ambulances and hospitals. Health Services Research, 35(2), 489.
+
+    :param coverage_dict: (dictionary) The coverage used to generate the model
+    :param num_ad: (integer) The number air depots to use
+    :param num_tc: (integer) The number of trauma centers to use
+    :param model_file: (string) The path of the model file to output
+    :param delineator: (string) The character(s) to use to delineate the layer from the ids
+    :return: (Pulp problem) The generated problem to solve
+    """
+    demand_var = "demand"
+    if not isinstance(coverage_dict, dict):
+        raise TypeError("coverage_dict is not a dictionary")
+    if not (isinstance(model_file, str)):
+        raise TypeError("model_file is not a string")
+    if not isinstance(num_ad, int):
+        raise TypeError("num_ad is not an integer")
+    if not isinstance(num_tc, int):
+        raise TypeError("num_tc is not an integer")
+    if not isinstance(delineator, str):
+        raise TypeError("delineator is not a string")
+    validate_coverage(coverage_dict, ["coverage"], ["traumah"])
+    # create the variables
+    demand_vars = {}
+    ground_vars = {}
+    air_vars = {}
+    adtc_vars = {}
+    for demand_id in coverage_dict["demand"]:
+        demand_vars[demand_id] = pulp.LpVariable("Y{}{}".format(delineator, demand_id), 0, 1, pulp.LpInteger)
+        ground_vars[demand_id] = pulp.LpVariable("V{}{}".format(delineator, demand_id), 0, 1, pulp.LpInteger)
+        air_vars[demand_id] = pulp.LpVariable("U{}{}".format(delineator, demand_id), 0, 1, pulp.LpInteger)
+    facility_vars = {}
+    # create the AirDepot and TraumaCenter variables
+    for facility_type in coverage_dict["facilities"]:
+        facility_vars[facility_type] = {}
+        for facility_id in coverage_dict["facilities"][facility_type]:
+            facility_vars[facility_type][facility_id] = \
+                pulp.LpVariable("{}{}{}".format(facility_type, delineator, facility_id), 0, 1, pulp.LpInteger)
+    # create the AD/TC veriables (zjk)
+    for ad_id in coverage_dict["facilities"]["AirDepot"]:
+        for tc_id in coverage_dict["facilities"]["TraumaCenter"]:
+            adtc_vars["Z{}{}{}{}".format(delineator,ad_id,delineator,tc_id)] = \
+                pulp.LpVariable("Z{}{}{}{}".format(delineator, ad_id,delineator, tc_id), 0, 1, pulp.LpInteger)
+    # create the problem
+    prob = pulp.LpProblem("TRAUMAH", pulp.LpMaximize)
+    # add objective
+    prob += pulp.lpSum([coverage_dict["demand"][demand_id][demand_var] * demand_vars[demand_id] for demand_id in
+                        coverage_dict["demand"]])
+    # Number of air depots
+    num_ad_sum = []
+    for facility_id in coverage_dict["facilities"]["AirDepot"]:
+        num_ad_sum.append(facility_vars["AirDepot"][facility_id])
+    prob += pulp.lpSum(num_ad_sum) == num_ad, "Num{}".format("AirDepot")
+    # Number of trauma centers
+    num_tc_sum = []
+    for facility_id in coverage_dict["facilities"]["TraumaCenter"]:
+        num_tc_sum.append(facility_vars["TraumaCenter"][facility_id])
+    prob += pulp.lpSum(num_tc_sum) == num_tc, "Num{}".format("TraumaCenter")
+
+    # add ground air logical conditions
+    for demand_id in coverage_dict["demand"]:
+        prob += demand_vars[demand_id] - ground_vars[demand_id] - air_vars[demand_id] <= 0, "AIR_GROUND_{}".format(demand_id)
+
+    # add ground constraints
+    for demand_id in coverage_dict["demand"]:
+        to_sum = []
+        for tc in coverage_dict["demand"][demand_id]["coverage"]["TraumaCenter"]:
+            to_sum.append(facility_vars["TraumaCenter"][tc["TraumaCenter"]])
+        prob += ground_vars[demand_id] - pulp.lpSum(to_sum) <= 0, "GND_{}".format(demand_id)
+
+    # add air constraints
+    for demand_id in coverage_dict["demand"]:
+        to_sum = []
+        for adtc_pair in coverage_dict["demand"][demand_id]["coverage"]["ADTCPair"]:
+            ad_id = adtc_pair["AirDepot"]
+            tc_id = adtc_pair["TraumaCenter"]
+            to_sum.append(adtc_vars["Z{}{}{}{}".format(delineator,ad_id,delineator,tc_id)])
+        prob += air_vars[demand_id] - pulp.lpSum(to_sum) <= 0, "AIR_{}".format(demand_id)
+
+
+    # add ground and air logical constraints
+    for adtc_id in adtc_vars.keys():
+        # ground constraints
+        prob += adtc_vars[adtc_id] - facility_vars["TraumaCenter"][adtc_id.split("$")[2]] <= 0, "GND_{}".format(adtc_id)
+        # air constraints
+        prob += adtc_vars[adtc_id] - facility_vars["AirDepot"][adtc_id.split("$")[1]] <= 0, "AIR_{}".format(adtc_id)
+
+    prob.writeLP(model_file)
+    return prob
+
+
+def create_bclpcc_model(coverage_dict, num_fac, backup_weight, model_file, delineator="$",
+                            use_serviceable_demand=False):
+    """
+    Creates a bclpcc coverage model using the provided coverage dictionary
+    and parameters. Writes a .lp file that can be solved with Gurobi
+
+    :param coverage_dict: (dictionary) The coverage to use to generate the model
+    :param num_fac: (dictionary) The dictionary of number of facilities to use
+    :param backup_weight: (float or int) The backup weight to use in the model
+    :param model_file: (string) The model file to output
+    :param delineator: (string) The character/symbol used to delineate facility and ids
+    :param use_serviceable_demand: (bool) Should we use the serviceable demand rather than demand
+    :return: (Pulp problem) The generated problem to solve
+    """
+    if use_serviceable_demand:
+        demand_var = "serviceableDemand"
+    else:
+        demand_var = "demand"
+    validate_coverage(coverage_dict, ["coverage"], ["partial"])
+    # Check parameters
+    if not isinstance(coverage_dict, dict):
+        raise TypeError("coverage_dict is not a dictionary")
+    if not isinstance(num_fac, dict):
+        raise TypeError("num_fac is not a dictionary")
+    if not (isinstance(backup_weight, float) or isinstance(backup_weight, int)):
+        raise TypeError("backup weight is not float or int")
+    if backup_weight > 1.0 or backup_weight < 0.0:
+        raise ValueError("Backup weight must be between 0 and 1")
+    if not (isinstance(model_file, str)):
+        raise TypeError("model_file is not a string")
+    if not isinstance(delineator, str):
+        raise TypeError("delineator is not a string")
+    primary_weight = 1 - backup_weight
+    primary_vars = {}
+    backup_vars = {}
+    overall_vars = {}
+    for demand_id in coverage_dict["demand"]:
+        primary_vars[demand_id] = pulp.LpVariable("W{}{}".format(delineator, demand_id), 0, None, pulp.LpContinuous)
+        backup_vars[demand_id] = pulp.LpVariable("Y{}{}".format(delineator, demand_id), None, None, pulp.LpContinuous)
+        overall_vars[demand_id] = pulp.LpVariable("Z{}{}".format(delineator, demand_id), 0, None, pulp.LpContinuous)
+    facility_vars = {}
+    for facility_type in coverage_dict["facilities"]:
+        facility_vars[facility_type] = {}
+        for facility_id in coverage_dict["facilities"][facility_type]:
+            facility_vars[facility_type][facility_id] = pulp.LpVariable(
+                "{}{}{}".format(facility_type, delineator, facility_id), 0, None, pulp.LpInteger)
+    # create the problem
+    prob = pulp.LpProblem("BCLPCC", pulp.LpMaximize)
+    to_sum = []
+    # create objective
+    for demand_id in coverage_dict["demand"]:
+        to_sum.append(backup_weight * backup_vars[demand_id] + primary_weight * primary_vars[demand_id])
+    prob += pulp.lpSum(to_sum)
+    # constraints
+    for demand_id in coverage_dict["demand"]:
+        to_sum = []
+        for facility_type in coverage_dict["demand"][demand_id]["coverage"]:
+            for facility_id in coverage_dict["demand"][demand_id]["coverage"][facility_type]:
+                to_sum.append(coverage_dict["demand"][demand_id]["coverage"][facility_type][facility_id] *
+                              facility_vars[facility_type][facility_id])
+        prob += pulp.lpSum(to_sum) - 1 * overall_vars[demand_id] >= 0, "D{}".format(demand_id)
+        prob += primary_vars[demand_id] <= coverage_dict["demand"][demand_id][demand_var], "primarydemand{}".format(
+            demand_id)
+        prob += primary_vars[demand_id] - overall_vars <= coverage_dict["demand"][demand_id][
+            demand_var], "primaryoverall{}".format(demand_id)
+        prob += overall_vars[demand_id] - backup_vars[demand_id] >= coverage_dict["demand"][demand_id][
+            demand_var], "overallbackup{}".format(demand_id)
+        prob += overall_vars[demand_id] <= 2 * coverage_dict["demand"][demand_id][demand_var], "overalldemand{}".format(
+            demand_id)
+    # Number of total facilities
+    to_sum = []
+    for facility_type in coverage_dict["facilities"]:
+        for facility_id in coverage_dict["facilities"][facility_type]:
+            to_sum.append(facility_vars[facility_type][facility_id])
+    prob += pulp.lpSum(to_sum) <= num_fac["total"], "NumTotalFacilities"
+    # Number of other facility types
+    for facility_type in coverage_dict["facilities"].keys():
+        if facility_type in num_fac and facility_type != "total":
+            to_sum = []
+            for facility_id in coverage_dict["facilities"][facility_type]:
+                to_sum.append(facility_vars[facility_type][facility_id])
+            prob += pulp.lpSum(to_sum) <= num_fac[facility_type], "Num{}".format(facility_type)
+    prob.writeLP(model_file)
+    return prob

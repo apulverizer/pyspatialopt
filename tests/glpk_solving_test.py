@@ -28,6 +28,9 @@ class GLPKSolverTest(unittest.TestCase):
         with open("valid_coverages/serviceable_demand_point.json", "r") as f:
             self.serviceable_demand_point = json.load(f)
 
+        with open("valid_coverages/traumah_coverage.json", "r") as f:
+            self.traumah_coverage = json.load(f)
+
     def test_mclp(self):
         mclp = covering.create_mclp_model(self.binary_coverage_polygon, {"total": 5}, "mclp.lp")
         mclp.solve(pulp.GLPK())
@@ -75,6 +78,24 @@ class GLPKSolverTest(unittest.TestCase):
         self.assertEqual(
             ['0', '1', '11', '12', '13', '14', '15', '16', '17', '18', '19', '2', '20', '21', '22', '4', '5', '6', '9'],
             ids2)
+
+    def test_traumah(self):
+        traumah = covering.create_traumah_model(self.traumah_coverage, 5, 10, "traumah.lp")
+        traumah.solve(pulp.GLPK())
+        ad_ids = utilities.get_ids(traumah, "AirDepot")
+        tc_ids = utilities.get_ids(traumah, "TraumaCenter")
+        self.assertEqual(['0', '1', '2', '3', '5'], ad_ids)
+        self.assertEqual(['10', '12', '15', '16', '18', '19', '21', '22', '7', '9'], tc_ids)
+
+    def test_bclpcc(self):
+        merged_dict = covering.merge_coverages([self.partial_coverage, self.partial_coverage2])
+        merged_dict = covering.update_serviceable_demand(merged_dict, self.serviceable_demand_polygon)
+        bclpcc = covering.create_bclpcc_model(merged_dict, {"total": 3}, 0.2, "bclpcc.lp")
+        bclpcc.solve(pulp.GLPK())
+        ids = utilities.get_ids(bclpcc, "facility_service_areas")
+        ids2 = utilities.get_ids(bclpcc, "facility2_service_areas")
+        self.assertEqual(['4'], ids)
+        self.assertEqual(['10'], ids2)
 
 
 if __name__ == '__main__':

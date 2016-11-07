@@ -15,6 +15,10 @@ class ArcpyCoverageTest(unittest.TestCase):
         self.demand_point_fl = arcpy.MakeFeatureLayer_management(r"../sample_data/demand_point.shp").getOutput(0)
         self.facility2_service_areas_fl = arcpy.MakeFeatureLayer_management(
             r"../sample_data/facility2_service_areas.shp").getOutput(0)
+        self.facility_point_fl = arcpy.MakeFeatureLayer_management(
+            r"../sample_data/facility.shp").getOutput(0)
+        self.facility2_point_fl = arcpy.MakeFeatureLayer_management(
+            r"../sample_data/facility2.shp").getOutput(0)
 
         # Load 'golden' coverages
         # Read the coverages
@@ -36,6 +40,9 @@ class ArcpyCoverageTest(unittest.TestCase):
             self.serviceable_demand_polygon = json.load(f)
         with open("valid_coverages/serviceable_demand_point.json", "r") as f:
             self.serviceable_demand_point = json.load(f)
+
+        with open("valid_coverages/traumah_coverage.json", "r") as f:
+            self.traumah_coverage = json.load(f)
 
     def test_partial_coverage(self):
         partial_coverage = arcpy_analysis.generate_partial_coverage(self.demand_polygon_fl,
@@ -85,6 +92,14 @@ class ArcpyCoverageTest(unittest.TestCase):
                                                                               self.facility_service_areas_fl)
         self.assertEqual(self.serviceable_demand_point, serviceable_demand_point)
         self.assertEqual(self.serviceable_demand_polygon, serviceable_demand_polygon)
+
+
+    def test_traumah_coverage(self):
+        traumah_coverage = arcpy_analysis.generate_traumah_coverage(self.demand_point_fl, self.demand_polygon_fl,
+                                                                    self.facility2_point_fl, self.facility_point_fl,
+                                                                    "Population",5000,dl_id_field="GEOID10",
+                                                                    tc_layer_id_field="ID", ad_layer_id_field="ID")
+        self.assertEqual(self.traumah_coverage, traumah_coverage)
 
 
 if __name__ == '__main__':
