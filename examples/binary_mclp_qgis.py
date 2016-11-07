@@ -6,8 +6,8 @@ import sys
 import pulp
 import qgis
 from pyspatialopt.models import covering, utilities
-
 from pyspatialopt.analysis import pyqgis_analysis
+
 
 if __name__ == "__main__":
     # Setup qgis environment

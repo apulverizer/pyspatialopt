@@ -44,8 +44,8 @@ The map shown above was derived from the results of this example.
 ```python
     import arcpy
     import pulp
-    from models import covering, utilities
-    from analysis import arcpy_analysis
+    from pyspatialopt.models import covering, utilities
+    from pyspatialopt.analysis import arcpy_analysis
 
     # Load shapefiles to feature layers
     demand_polygon_fl = arcpy.MakeFeatureLayer_management(r"../sample_data/demand_polygon.shp").getOutput(0)
