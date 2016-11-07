@@ -27,7 +27,11 @@ The following models are supported:
     * Hogan, Kathleen, and Charles Revelle. 1986. Concepts and Applications of Backup Coverage. Management Science 32 (11):1434-1444.
  * Location Set Covering Problem (LSCP)
     * Toregas, Constantine, et al. "The location of emergency service facilities." Operations Research 19.6 (1971): 1363-1373.
- 
+ * Backup Coverage Location Problem (BCLPCC)
+    * Pulver, Aaron and Ran Wei. Presentation given at AAG 2016. San Fransico, CA.
+    * Paper in review
+ * The Trauma Resource Allocation Model for Ambulances and Hospitals (TRAUMAH)
+    * Branas, C. C., MacKenzie, E. J., & ReVelle, C. S. (2000). A trauma resource allocation model for ambulances and hospitals. Health Services Research, 35(2), 489.
  
 #Workflow
 1. Load a spatial data into a feature (vector) layer
