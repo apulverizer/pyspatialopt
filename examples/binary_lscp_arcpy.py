@@ -1,7 +1,6 @@
 # -*- coding: UTF-8 -*-
 import logging
 import sys
-
 import arcpy
 import pulp
 from pyspatialopt.analysis import arcpy_analysis

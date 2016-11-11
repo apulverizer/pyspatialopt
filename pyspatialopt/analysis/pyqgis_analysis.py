@@ -2,9 +2,9 @@
 import logging
 import math
 import os
-
 import qgis
-
+import qgis.core
+import qgis.utils
 from pyspatialopt import version
 
 

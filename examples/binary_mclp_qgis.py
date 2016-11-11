@@ -2,7 +2,6 @@
 import logging
 import os
 import sys
-
 import pulp
 import qgis
 from pyspatialopt.models import covering, utilities

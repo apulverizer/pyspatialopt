@@ -78,13 +78,18 @@ The map shown above was derived from the results of this example.
 
 1. Clone/Fork the repo locally
 2. Ensure that you have arcpy (ArcGIS) or pyqgis (QGIS) installed
-3. Ensure that you download and install from [here](http://www.coin-or.org/PuLP/) or from source at [github](https://github.com/coin-or/pulp)
-4. Run the setup.py script (```python setup.py install```)
-5. Set the $QGIS_PATH (if you plan to use QGIS) environment variable to point to the directory containing your QGIS installation
-6. Run the tests or examples to verify that it works. 
+3. Ensure that you download and install Pulp from [here](http://www.coin-or.org/PuLP/) or from source at [github](https://github.com/coin-or/pulp)
+4. Install the optimization solvers (GLPK, Gurobi, etc.)
+    1.  Modify the Pulp configuration files (in Python27/Lib/site-packages/pulp) to point to the optimizers
+5. Run the setup.py script (```python setup.py install```)
+6. Set environment variables (at runtime) if you haven't configured PyQGIS before (and you're using it) to point to the directory containing your QGIS installation. The following assumes you've installed QGIS via OSGEO. Make sure you have the following set at runtime (using the included Python version):
+    1. QGIS_HOME = \<path_to_osgeo4w>\apps\qgis
+    2. PYTHONPATH=\<path_to_osgeo4w\>\apps\qgis\python;\<path_to_osgeo4w\>\bin\python.exe;\<path_to_osgeo4w\>\apps\qgis\python\plugins
+    3. PATH=\<path_to_osgeo4w>\bin;\<path_to_osgeo4w>\apps\qgis\bin;\<path_to_osgeo4w>\apps\Python27\Scripts;\<path_to_osgeo4w>\bin;
+    4. PYTHONHOME=\<path_to_osgeo4w>\apps\Python27
+7. Run the tests or examples to verify that it works. 
 
-**If you are using PyQGIS you need make sure you have your PYTHONPATH pointed to the required QGIS directories**
- 
+See the [wiki pages](https://github.com/apulverizer/pyspatialopt/wiki/Using-PyQGIS-with-PyCharm) to see how to configure PyCharm with PyQGIS.
  
 #Notes
 This is a side project and I will try to respond to issues and make updates but the code is provided as-is with no guarantees. 
