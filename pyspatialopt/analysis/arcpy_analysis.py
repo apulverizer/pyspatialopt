@@ -97,10 +97,13 @@ def generate_serviceable_demand(dl, dl_demand_field, dl_id_field, *args):
     with arcpy.da.SearchCursor(dl, [dl_id_field, dl_demand_field, "SHAPE@"]) as dcursor:
         if arcpy.Describe(dl).shapeType == "Polygon":
             for d in dcursor:
-                intersected = dissovled_geom.intersect(d[2], 4)
-                if intersected.area > 0:
-                    serviceable_demand = math.ceil(
-                        float(intersected.area / d[2].area) * d[1])
+                if not dissovled_geom.disjoint(d[2]):
+                    intersected = dissovled_geom.intersect(d[2], 4)
+                    if intersected.area > 0:
+                        serviceable_demand = math.ceil(
+                            float(intersected.area / d[2].area) * d[1])
+                    else:
+                        serviceable_demand = 0.0
                 else:
                     serviceable_demand = 0.0
                 # Make sure serviceable is less than or equal to demand, floating point issues
@@ -180,8 +183,7 @@ def generate_binary_coverage(dl, fl, dl_demand_field, dl_id_field, fl_id_field, 
             for f in fcursor:
                 with arcpy.da.SearchCursor(dl, [dl_id_field, "SHAPE@"]) as dcursor:
                     for d in dcursor:
-                        intersection = f[1].intersect(d[1], 1)
-                        if intersection.centroid:  # check if valid
+                        if not f[1].disjoint(d[1]):
                             output["demand"][str(d[0])]["serviceableDemand"] = \
                                 output["demand"][str(d[0])]["demand"]
                             output["demand"][str(d[0])]["coverage"][fl_variable_name][str(f[0])] = 1
@@ -189,10 +191,11 @@ def generate_binary_coverage(dl, fl, dl_demand_field, dl_id_field, fl_id_field, 
             for f in fcursor:
                 with arcpy.da.SearchCursor(dl, [dl_id_field, "SHAPE@"]) as dcursor:
                     for d in dcursor:
-                        if f[1].contains(d[1]):
-                            output["demand"][str(d[0])]["serviceableDemand"] = \
-                                output["demand"][str(d[0])]["demand"]
-                            output["demand"][str(d[0])]["coverage"][fl_variable_name][str(f[0])] = 1
+                        if not f[1].disjoint(d[1]):
+                            if f[1].contains(d[1]):
+                                output["demand"][str(d[0])]["serviceableDemand"] = \
+                                    output["demand"][str(d[0])]["demand"]
+                                output["demand"][str(d[0])]["coverage"][fl_variable_name][str(f[0])] = 1
     with arcpy.da.SearchCursor(dl, [dl_id_field, dl_demand_field]) as cursor:
         for row in cursor:
             output["totalServiceableDemand"] += output["demand"][str(row[0])]["serviceableDemand"]
@@ -269,10 +272,13 @@ def generate_partial_coverage(dl, fl, dl_demand_field, dl_id_field="OBJECTID", f
     logging.getLogger().info("Determining partial coverage for each demand unit...")
     with arcpy.da.SearchCursor(dl, [dl_id_field, dl_demand_field, "SHAPE@"]) as dcursor:
         for d in dcursor:
-            intersected = dissovled_geom.intersect(d[2], 4)
-            if intersected.area > 0:
-                serviceable_demand = math.ceil(
-                    float(intersected.area / d[2].area) * d[1])
+            if not dissovled_geom.disjoint(d[2]):
+                intersected = dissovled_geom.intersect(d[2], 4)
+                if intersected.area > 0:
+                    serviceable_demand = math.ceil(
+                        float(intersected.area / d[2].area) * d[1])
+                else:
+                    serviceable_demand = 0.0
             else:
                 serviceable_demand = 0.0
             # Make sure serviceable is less than or equal to demand, floating point issues
@@ -282,14 +288,15 @@ def generate_partial_coverage(dl, fl, dl_demand_field, dl_id_field="OBJECTID", f
                 output["demand"][str(d[0])]["serviceableDemand"] = output["demand"][str(d[0])]["demand"]
             with arcpy.da.SearchCursor(fl, [fl_id_field, "SHAPE@"]) as fcursor:
                 for f in fcursor:
-                    intersected_fd = d[2].intersect(f[1], 4)
-                    if intersected_fd.area > 0:
-                        demand = math.ceil(float(intersected_fd.area / d[2].area) * d[1])
-                        if demand < output["demand"][str(d[0])]["serviceableDemand"]:
-                            output["demand"][str(d[0])]["coverage"][fl_variable_name][str(f[0])] = demand
-                        else:
-                            output["demand"][str(d[0])]["coverage"][fl_variable_name][str(f[0])] = \
-                                output["demand"][str(d[0])]["serviceableDemand"]
+                    if not d[2].disjoint(f[1]):
+                        intersected_fd = d[2].intersect(f[1], 4)
+                        if intersected_fd.area > 0:
+                            demand = math.ceil(float(intersected_fd.area / d[2].area) * d[1])
+                            if demand < output["demand"][str(d[0])]["serviceableDemand"]:
+                                output["demand"][str(d[0])]["coverage"][fl_variable_name][str(f[0])] = demand
+                            else:
+                                output["demand"][str(d[0])]["coverage"][fl_variable_name][str(f[0])] = \
+                                    output["demand"][str(d[0])]["serviceableDemand"]
     with arcpy.da.SearchCursor(dl, [dl_id_field, dl_demand_field, "SHAPE@AREA"]) as cursor:
         for row in cursor:
             output["totalServiceableDemand"] += output["demand"][str(row[0])]["serviceableDemand"]
@@ -376,8 +383,7 @@ def generate_traumah_coverage(dl, dl_service_area, tc_layer, ad_layer, dl_demand
         for f in fcursor:
             with arcpy.da.SearchCursor(dl_service_area, [dl_id_field, "SHAPE@"]) as dcursor:
                 for d in dcursor:
-                    intersection = f[1].intersect(d[1], 1)
-                    if intersection.centroid:  # check if valid
+                    if not f[1].disjoint(d[1]):
                         output["demand"][str(d[0])]["coverage"][tc_variable_name].append({
                             tc_variable_name: str(f[0])
                         })
@@ -444,10 +450,13 @@ def get_covered_demand(dl, dl_demand_field, mode, *args):
     with arcpy.da.SearchCursor(dl, [dl_demand_field, "SHAPE@"]) as dcursor:
         if arcpy.Describe(dl).shapeType == "Polygon" and mode == "partial":
             for d in dcursor:
-                intersected = dissovled_geom.intersect(d[1], 4)
-                if intersected.area > 0:
-                    serviceable_demand = math.ceil(
-                        float(intersected.area / d[1].area) * d[0])
+                if not dissovled_geom.disjoint(d[1]):
+                    intersected = dissovled_geom.intersect(d[1], 4)
+                    if intersected.area > 0:
+                        serviceable_demand = math.ceil(
+                            float(intersected.area / d[1].area) * d[0])
+                    else:
+                        serviceable_demand = 0.0
                 else:
                     serviceable_demand = 0.0
                 # Make sure serviceable is less than or equal to demand, floating point issues
