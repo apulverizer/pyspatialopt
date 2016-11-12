@@ -169,10 +169,10 @@ def generate_binary_coverage(dl, fl, dl_demand_field, dl_id_field, fl_id_field, 
         for row in cursor:
             output["facilities"][fl_variable_name].append(str(row[0]))
     # Build empty data structure
-    with arcpy.da.SearchCursor(dl, [dl_id_field, dl_demand_field]) as cursor:
+    with arcpy.da.SearchCursor(dl, [dl_id_field, dl_demand_field, "SHAPE@AREA"]) as cursor:
         for row in cursor:
             output["demand"][str(row[0])] = {
-                "area": None,
+                "area": round(row[2]),
                 "demand": round(row[1]),
                 "serviceableDemand": 0,
                 "coverage": {fl_variable_name: {}}

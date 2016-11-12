@@ -4,7 +4,6 @@ import os
 import qgis
 import sys
 import unittest
-from processing.core.Processing import Processing
 from pyspatialopt.analysis import pyqgis_analysis
 
 
@@ -14,8 +13,6 @@ class PyQGISCoverageTest(unittest.TestCase):
         qgs = qgis.core.QgsApplication(sys.argv, True)
         qgs.setPrefixPath(os.path.expandvars(r"$QGIS_PATH"), True)
         qgs.initQgis()
-        Processing.initialize()
-        Processing.updateAlgsList()
 
         # Load layers
         self.demand_polygon_fl = qgis.core.QgsVectorLayer(r"../sample_data/demand_polygon.shp", "demand_polygon_fl",
@@ -25,6 +22,11 @@ class PyQGISCoverageTest(unittest.TestCase):
         self.demand_point_fl = qgis.core.QgsVectorLayer(r"../sample_data/demand_point.shp", "demand_point_fl", "ogr")
         self.facility2_service_areas_fl = qgis.core.QgsVectorLayer(r"../sample_data/facility2_service_areas.shp",
                                                                    "facility2_service_areas_fl", "ogr")
+        self.facility_point_fl = qgis.core.QgsVectorLayer(r"../sample_data/facility.shp",
+                                                                   "facility_point_fl", "ogr")
+        self.facility2_point_fl = qgis.core.QgsVectorLayer(r"../sample_data/facility2.shp",
+                                                                   "facility2_point_fl", "ogr")
+
         # Load 'golden' coverages
         # Read the coverages
         with open("valid_coverages/partial_coverage1.json", "r") as f:
@@ -45,6 +47,9 @@ class PyQGISCoverageTest(unittest.TestCase):
             self.serviceable_demand_polygon = json.load(f)
         with open("valid_coverages/serviceable_demand_point.json", "r") as f:
             self.serviceable_demand_point = json.load(f)
+
+        with open("valid_coverages/traumah_coverage.json", "r") as f:
+            self.traumah_coverage = json.load(f)
 
     def test_partial_coverage(self):
         partial_coverage = pyqgis_analysis.generate_partial_coverage(self.demand_polygon_fl,
@@ -94,6 +99,13 @@ class PyQGISCoverageTest(unittest.TestCase):
                                                                                self.facility_service_areas_fl)
         self.assertEqual(self.serviceable_demand_point, serviceable_demand_point)
         self.assertEqual(self.serviceable_demand_polygon, serviceable_demand_polygon)
+
+    def test_traumah_coverage(self):
+        traumah_coverage = pyqgis_analysis.generate_traumah_coverage(self.demand_point_fl, self.demand_polygon_fl,
+                                                                    self.facility2_point_fl, self.facility_point_fl,
+                                                                    "Population",5000,dl_id_field="GEOID10",
+                                                                    tc_layer_id_field="ID", ad_layer_id_field="ID")
+        self.assertEqual(self.traumah_coverage, traumah_coverage)
 
 
 if __name__ == '__main__':

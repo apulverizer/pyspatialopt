@@ -162,9 +162,9 @@ def generate_binary_coverage(dl, fl, dl_demand_field, dl_id_field, fl_id_field, 
     logging.getLogger().info("Initializing demand in output...")
     for feature in dl.getFeatures():
         output["demand"][str(feature[dl_id_field])] = {
-            "area": None,
+            "area": round(feature.geometry().area()),
             "demand": round(feature[dl_demand_field]),
-            "serviceableDemand": 0,
+            "serviceableDemand": 0.0,
             "coverage": {fl_variable_name: {}}
         }
     logging.getLogger().info("Determining binary coverage for each demand unit...")
@@ -246,7 +246,7 @@ def generate_partial_coverage(dl, fl, dl_demand_field, dl_id_field, fl_id_field,
         output["demand"][str(feature[dl_id_field])] = {
             "area": round(feature.geometry().area()),
             "demand": round(feature[dl_demand_field]),
-            "serviceableDemand": 0,
+            "serviceableDemand": 0.0,
             "coverage": {fl_variable_name: {}}
         }
     # Dissolve all facility service areas so we can find the total serviceable area
@@ -287,6 +287,103 @@ def generate_partial_coverage(dl, fl, dl_demand_field, dl_id_field, fl_id_field,
     logging.getLogger().info("Partial coverage successfully generated.")
     reset_layers(dl, fl)
     return output
+
+
+def generate_traumah_coverage(dl, dl_service_area, tc_layer, ad_layer, dl_demand_field, air_distance_threshold, dl_id_field="FID", tc_layer_id_field="FID", ad_layer_id_field="FID"):
+    """
+    Generates a coverage model for the TRAUMAH model. The traumah model uses trauma centers (TC), air depots (AD), and demand
+    :param dl: (Feature Layer) The demand point layer
+    :param dl_service_area (Feature Layer) The demand service area (generally derived from street network)
+    :param tc_layer: (Feature Layer) The Trauma Center point layer
+    :param ad_layer: (Feature Layer) The Air Depot point layer
+    :param dl_demand_field: (string) The attribute that represents the demand in the demand layer
+    :param air_distance_threshold: (float) The maximum total distance a helicopter can fly
+    :param dl_id_field: (string) The attribute that represents unique ids for the demand layers
+    :param tc_layer_id_field: (string) The attribute that represents unique ids for the trauma center layers
+    :param ad_layer_id_field: (string) The attribute that represents unique ids for the air depot layers
+    :return: (dictionary) A nested dictionary storing the coverage relationships
+    """
+    if dl.wkbType() != qgis.utils.QGis.WKBPoint:
+        raise TypeError("Demand layer must have point geometry")
+    if dl_service_area.wkbType() != qgis.utils.QGis.WKBPolygon:
+        raise TypeError("Demand layer must have polygon geometry")
+    if tc_layer.wkbType() != qgis.utils.QGis.WKBPoint:
+        raise TypeError("Trauma center layer must have point geometry")
+    dl_field_names = [field.name() for field in dl.pendingFields()]
+    if dl_demand_field not in dl_field_names:
+        raise ValueError("'{}' field not found in demand layer".format(dl_demand_field))
+    if dl_id_field not in dl_field_names:
+        raise ValueError("'{}' field not found in demand layer".format(dl_id_field))
+    tc_layer_field_names = [field.name() for field in tc_layer.pendingFields()]
+    if tc_layer_id_field not in tc_layer_field_names:
+        raise ValueError("'{}' field not found in trauma center layer".format(tc_layer_id_field))
+    ad_layer_field_names = [field.name() for field in ad_layer.pendingFields()]
+    if ad_layer_id_field not in ad_layer_field_names:
+        raise ValueError("'{}' field not found in trauma center layer".format(ad_layer_id_field))
+    reset_layers(dl, dl_service_area, ad_layer, tc_layer)
+    ad_variable_name = "AirDepot"
+    tc_variable_name = "TraumaCenter"
+    ad_tc_variable_name = "ADTCPair"
+    logging.getLogger().info("Initializing facilities in output...")
+    output = {
+        "version": version.__version__,
+        "type": {
+            "mode": "coverage",
+            "type": "traumah",
+        },
+        "demand": {},
+        "totalDemand": 0.0,
+        "totalServiceableDemand": 0.0,
+        "facilities": {ad_variable_name: [],
+                       tc_variable_name: []}
+    }
+    # List all of the facilities
+    logging.getLogger().info("Initializing facilities in output...")
+    for feature in ad_layer.getFeatures():
+        output["facilities"][ad_variable_name].append(str(feature[ad_layer_id_field]))
+    for feature in tc_layer.getFeatures():
+        output["facilities"][tc_variable_name].append(str(feature[tc_layer_id_field]))
+    # Build empty data structure
+    logging.getLogger().info("Initializing demand in output...")
+    for feature in dl.getFeatures():
+        output["demand"][str(feature[dl_id_field])] = {
+            "area": round(feature.geometry().area()),
+            "demand": round(feature[dl_demand_field]),
+            "serviceableDemand": 0.0,
+            "coverage": {tc_variable_name: [],
+                         ad_tc_variable_name: []}
+        }
+    logging.getLogger().info("Determining binary coverage (using ground transport service area) for each demand unit...")
+    for feature in tc_layer.getFeatures():
+        geom = feature.geometry()
+        for dl_p in dl_service_area.getFeatures():
+            geom2 = dl_p.geometry()
+            if geom2.intersects(geom):
+                output["demand"][str(dl_p[dl_id_field])]["coverage"][tc_variable_name].append({
+                    tc_variable_name: str(feature[tc_layer_id_field])
+                })
+
+    logging.getLogger().info("Determining binary coverage (using air transportation) for each demand unit...")
+    for d in dl.getFeatures():
+        geom = d.geometry()
+        distances = {}
+        for t in tc_layer.getFeatures():
+            geom2 = t.geometry()
+            distances[t[tc_layer_id_field]] = geom.distance(geom2)
+
+        for a in ad_layer.getFeatures():
+            geom2 = a.geometry()
+            distance = geom2.distance(geom)
+            for k, v in distances.items():
+                if distance + v <= air_distance_threshold:
+                    output["demand"][str(d[dl_id_field])]["coverage"][ad_tc_variable_name].append({
+                        tc_variable_name: str(k),
+                        ad_variable_name: str(a[ad_layer_id_field])
+                    })
+    logging.getLogger().info("Binary traumah coverage successfully generated.")
+    reset_layers(dl, tc_layer, ad_layer)
+    return output
+
 
 
 def get_covered_demand(dl, dl_demand_field, mode, *args):

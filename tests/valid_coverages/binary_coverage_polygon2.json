@@ -1,7 +1,7 @@
 {
     "demand": {
         "49035100100": {
-            "area": null, 
+            "area": 3934134.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "1": 1
@@ -11,7 +11,7 @@
             "serviceableDemand": 1529.0
         }, 
         "49035100200": {
-            "area": null, 
+            "area": 24021288.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -19,7 +19,7 @@
             "serviceableDemand": 0
         }, 
         "49035100306": {
-            "area": null, 
+            "area": 1798463.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -27,7 +27,7 @@
             "serviceableDemand": 0
         }, 
         "49035100307": {
-            "area": null, 
+            "area": 1489780.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "1": 1
@@ -37,7 +37,7 @@
             "serviceableDemand": 5223.0
         }, 
         "49035100308": {
-            "area": null, 
+            "area": 1360758.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "1": 1
@@ -47,7 +47,7 @@
             "serviceableDemand": 4222.0
         }, 
         "49035100500": {
-            "area": null, 
+            "area": 1894206.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "1": 1
@@ -57,7 +57,7 @@
             "serviceableDemand": 6379.0
         }, 
         "49035100600": {
-            "area": null, 
+            "area": 2941261.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "1": 1
@@ -67,7 +67,7 @@
             "serviceableDemand": 6556.0
         }, 
         "49035100700": {
-            "area": null, 
+            "area": 1139611.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "2": 1
@@ -77,7 +77,7 @@
             "serviceableDemand": 2704.0
         }, 
         "49035100800": {
-            "area": null, 
+            "area": 723692.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "2": 1
@@ -87,7 +87,7 @@
             "serviceableDemand": 2491.0
         }, 
         "49035101000": {
-            "area": null, 
+            "area": 1385879.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "2": 1, 
@@ -98,7 +98,7 @@
             "serviceableDemand": 2959.0
         }, 
         "49035101101": {
-            "area": null, 
+            "area": 484007.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "2": 1, 
@@ -109,7 +109,7 @@
             "serviceableDemand": 1969.0
         }, 
         "49035101102": {
-            "area": null, 
+            "area": 558993.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "2": 1, 
@@ -120,7 +120,7 @@
             "serviceableDemand": 3422.0
         }, 
         "49035101200": {
-            "area": null, 
+            "area": 1738760.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "2": 1, 
@@ -131,7 +131,7 @@
             "serviceableDemand": 3877.0
         }, 
         "49035101400": {
-            "area": null, 
+            "area": 11420200.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "3": 1
@@ -141,7 +141,7 @@
             "serviceableDemand": 4816.0
         }, 
         "49035101500": {
-            "area": null, 
+            "area": 823480.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "2": 1, 
@@ -152,7 +152,7 @@
             "serviceableDemand": 3214.0
         }, 
         "49035101600": {
-            "area": null, 
+            "area": 992761.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "3": 1
@@ -162,7 +162,7 @@
             "serviceableDemand": 3628.0
         }, 
         "49035101700": {
-            "area": null, 
+            "area": 700677.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "2": 1, 
@@ -173,7 +173,7 @@
             "serviceableDemand": 3534.0
         }, 
         "49035101800": {
-            "area": null, 
+            "area": 876478.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "3": 1
@@ -183,7 +183,7 @@
             "serviceableDemand": 3086.0
         }, 
         "49035101900": {
-            "area": null, 
+            "area": 699021.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "2": 1, 
@@ -194,7 +194,7 @@
             "serviceableDemand": 2497.0
         }, 
         "49035102000": {
-            "area": null, 
+            "area": 873646.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "3": 1
@@ -204,7 +204,7 @@
             "serviceableDemand": 2620.0
         }, 
         "49035102100": {
-            "area": null, 
+            "area": 466523.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "2": 1, 
@@ -215,7 +215,7 @@
             "serviceableDemand": 1457.0
         }, 
         "49035102300": {
-            "area": null, 
+            "area": 816815.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "3": 1
@@ -225,7 +225,7 @@
             "serviceableDemand": 2760.0
         }, 
         "49035102500": {
-            "area": null, 
+            "area": 1847530.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -233,7 +233,7 @@
             "serviceableDemand": 0
         }, 
         "49035102600": {
-            "area": null, 
+            "area": 2440855.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -241,7 +241,7 @@
             "serviceableDemand": 0
         }, 
         "49035102701": {
-            "area": null, 
+            "area": 1399675.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "22": 1
@@ -251,7 +251,7 @@
             "serviceableDemand": 5099.0
         }, 
         "49035102702": {
-            "area": null, 
+            "area": 1680652.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "22": 1
@@ -261,7 +261,7 @@
             "serviceableDemand": 3835.0
         }, 
         "49035102801": {
-            "area": null, 
+            "area": 2775490.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "22": 1
@@ -271,7 +271,7 @@
             "serviceableDemand": 6106.0
         }, 
         "49035102802": {
-            "area": null, 
+            "area": 5255894.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "22": 1
@@ -281,7 +281,7 @@
             "serviceableDemand": 5063.0
         }, 
         "49035102900": {
-            "area": null, 
+            "area": 3771185.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -289,7 +289,7 @@
             "serviceableDemand": 0
         }, 
         "49035103000": {
-            "area": null, 
+            "area": 1312152.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "3": 1
@@ -299,7 +299,7 @@
             "serviceableDemand": 2954.0
         }, 
         "49035103100": {
-            "area": null, 
+            "area": 1304688.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "3": 1
@@ -309,7 +309,7 @@
             "serviceableDemand": 4163.0
         }, 
         "49035103200": {
-            "area": null, 
+            "area": 1296487.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -317,7 +317,7 @@
             "serviceableDemand": 0
         }, 
         "49035103300": {
-            "area": null, 
+            "area": 1303174.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "3": 1, 
@@ -328,7 +328,7 @@
             "serviceableDemand": 4267.0
         }, 
         "49035103400": {
-            "area": null, 
+            "area": 1307693.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "3": 1
@@ -338,7 +338,7 @@
             "serviceableDemand": 4080.0
         }, 
         "49035103500": {
-            "area": null, 
+            "area": 1312818.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "3": 1
@@ -348,7 +348,7 @@
             "serviceableDemand": 4045.0
         }, 
         "49035103600": {
-            "area": null, 
+            "area": 1031680.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "3": 1
@@ -358,7 +358,7 @@
             "serviceableDemand": 2670.0
         }, 
         "49035103700": {
-            "area": null, 
+            "area": 886667.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "3": 1, 
@@ -369,7 +369,7 @@
             "serviceableDemand": 2581.0
         }, 
         "49035103800": {
-            "area": null, 
+            "area": 841712.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "3": 1, 
@@ -380,7 +380,7 @@
             "serviceableDemand": 2382.0
         }, 
         "49035103900": {
-            "area": null, 
+            "area": 1304656.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "3": 1, 
@@ -391,7 +391,7 @@
             "serviceableDemand": 3786.0
         }, 
         "49035104000": {
-            "area": null, 
+            "area": 1394855.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "3": 1, 
@@ -402,7 +402,7 @@
             "serviceableDemand": 3267.0
         }, 
         "49035104100": {
-            "area": null, 
+            "area": 1034381.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "3": 1, 
@@ -413,7 +413,7 @@
             "serviceableDemand": 2968.0
         }, 
         "49035104200": {
-            "area": null, 
+            "area": 5639676.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -421,7 +421,7 @@
             "serviceableDemand": 0
         }, 
         "49035104300": {
-            "area": null, 
+            "area": 1087714.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "4": 1
@@ -431,7 +431,7 @@
             "serviceableDemand": 2821.0
         }, 
         "49035104400": {
-            "area": null, 
+            "area": 1922583.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "4": 1
@@ -441,7 +441,7 @@
             "serviceableDemand": 2010.0
         }, 
         "49035104700": {
-            "area": null, 
+            "area": 2147370.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "4": 1
@@ -451,7 +451,7 @@
             "serviceableDemand": 4774.0
         }, 
         "49035104800": {
-            "area": null, 
+            "area": 2047183.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "4": 1
@@ -461,7 +461,7 @@
             "serviceableDemand": 5022.0
         }, 
         "49035104900": {
-            "area": null, 
+            "area": 1301953.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "4": 1
@@ -471,7 +471,7 @@
             "serviceableDemand": 3147.0
         }, 
         "49035110102": {
-            "area": null, 
+            "area": 227276445.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -479,7 +479,7 @@
             "serviceableDemand": 0
         }, 
         "49035110103": {
-            "area": null, 
+            "area": 255492577.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -487,7 +487,7 @@
             "serviceableDemand": 0
         }, 
         "49035110104": {
-            "area": null, 
+            "area": 64086887.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -495,7 +495,7 @@
             "serviceableDemand": 0
         }, 
         "49035110200": {
-            "area": null, 
+            "area": 3238299.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "4": 1
@@ -505,7 +505,7 @@
             "serviceableDemand": 5077.0
         }, 
         "49035110300": {
-            "area": null, 
+            "area": 2329844.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "4": 1
@@ -515,7 +515,7 @@
             "serviceableDemand": 5477.0
         }, 
         "49035110401": {
-            "area": null, 
+            "area": 1806460.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "4": 1
@@ -525,7 +525,7 @@
             "serviceableDemand": 3476.0
         }, 
         "49035110402": {
-            "area": null, 
+            "area": 1747477.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "4": 1
@@ -535,7 +535,7 @@
             "serviceableDemand": 3653.0
         }, 
         "49035110500": {
-            "area": null, 
+            "area": 3381215.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "4": 1
@@ -545,7 +545,7 @@
             "serviceableDemand": 6164.0
         }, 
         "49035110600": {
-            "area": null, 
+            "area": 2914690.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "4": 1, 
@@ -556,7 +556,7 @@
             "serviceableDemand": 5376.0
         }, 
         "49035110701": {
-            "area": null, 
+            "area": 1306435.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "4": 1
@@ -566,7 +566,7 @@
             "serviceableDemand": 3628.0
         }, 
         "49035110702": {
-            "area": null, 
+            "area": 2256792.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "4": 1
@@ -576,7 +576,7 @@
             "serviceableDemand": 4896.0
         }, 
         "49035110800": {
-            "area": null, 
+            "area": 3400021.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -584,7 +584,7 @@
             "serviceableDemand": 0
         }, 
         "49035110900": {
-            "area": null, 
+            "area": 2567557.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "5": 1
@@ -594,7 +594,7 @@
             "serviceableDemand": 4562.0
         }, 
         "49035111001": {
-            "area": null, 
+            "area": 6254176.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -602,7 +602,7 @@
             "serviceableDemand": 0
         }, 
         "49035111002": {
-            "area": null, 
+            "area": 3811589.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -610,7 +610,7 @@
             "serviceableDemand": 0
         }, 
         "49035111101": {
-            "area": null, 
+            "area": 3750069.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -618,7 +618,7 @@
             "serviceableDemand": 0
         }, 
         "49035111102": {
-            "area": null, 
+            "area": 2961537.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -626,7 +626,7 @@
             "serviceableDemand": 0
         }, 
         "49035111103": {
-            "area": null, 
+            "area": 3416027.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -634,7 +634,7 @@
             "serviceableDemand": 0
         }, 
         "49035111201": {
-            "area": null, 
+            "area": 1377032.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -642,7 +642,7 @@
             "serviceableDemand": 0
         }, 
         "49035111202": {
-            "area": null, 
+            "area": 2483748.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -650,7 +650,7 @@
             "serviceableDemand": 0
         }, 
         "49035111302": {
-            "area": null, 
+            "area": 3330742.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -658,7 +658,7 @@
             "serviceableDemand": 0
         }, 
         "49035111304": {
-            "area": null, 
+            "area": 3003604.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -666,7 +666,7 @@
             "serviceableDemand": 0
         }, 
         "49035111305": {
-            "area": null, 
+            "area": 1922888.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -674,7 +674,7 @@
             "serviceableDemand": 0
         }, 
         "49035111306": {
-            "area": null, 
+            "area": 1530454.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -682,7 +682,7 @@
             "serviceableDemand": 0
         }, 
         "49035111400": {
-            "area": null, 
+            "area": 2153421.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -690,7 +690,7 @@
             "serviceableDemand": 0
         }, 
         "49035111500": {
-            "area": null, 
+            "area": 7528722.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -698,7 +698,7 @@
             "serviceableDemand": 0
         }, 
         "49035111600": {
-            "area": null, 
+            "area": 6761331.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -706,7 +706,7 @@
             "serviceableDemand": 0
         }, 
         "49035111701": {
-            "area": null, 
+            "area": 1357353.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -714,7 +714,7 @@
             "serviceableDemand": 0
         }, 
         "49035111702": {
-            "area": null, 
+            "area": 1708501.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -722,7 +722,7 @@
             "serviceableDemand": 0
         }, 
         "49035111801": {
-            "area": null, 
+            "area": 2082457.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "4": 1
@@ -732,7 +732,7 @@
             "serviceableDemand": 5276.0
         }, 
         "49035111802": {
-            "area": null, 
+            "area": 1195962.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "4": 1
@@ -742,7 +742,7 @@
             "serviceableDemand": 2408.0
         }, 
         "49035111903": {
-            "area": null, 
+            "area": 2070850.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -750,7 +750,7 @@
             "serviceableDemand": 0
         }, 
         "49035111904": {
-            "area": null, 
+            "area": 1318775.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -758,7 +758,7 @@
             "serviceableDemand": 0
         }, 
         "49035111905": {
-            "area": null, 
+            "area": 1166974.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -766,7 +766,7 @@
             "serviceableDemand": 0
         }, 
         "49035111906": {
-            "area": null, 
+            "area": 1015716.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -774,7 +774,7 @@
             "serviceableDemand": 0
         }, 
         "49035112001": {
-            "area": null, 
+            "area": 1439383.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -782,7 +782,7 @@
             "serviceableDemand": 0
         }, 
         "49035112002": {
-            "area": null, 
+            "area": 2599136.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -790,7 +790,7 @@
             "serviceableDemand": 0
         }, 
         "49035112100": {
-            "area": null, 
+            "area": 6706559.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -798,7 +798,7 @@
             "serviceableDemand": 0
         }, 
         "49035112201": {
-            "area": null, 
+            "area": 4089528.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -806,7 +806,7 @@
             "serviceableDemand": 0
         }, 
         "49035112202": {
-            "area": null, 
+            "area": 3622482.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -814,7 +814,7 @@
             "serviceableDemand": 0
         }, 
         "49035112301": {
-            "area": null, 
+            "area": 2286871.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -822,7 +822,7 @@
             "serviceableDemand": 0
         }, 
         "49035112302": {
-            "area": null, 
+            "area": 2513214.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -830,7 +830,7 @@
             "serviceableDemand": 0
         }, 
         "49035112402": {
-            "area": null, 
+            "area": 2718848.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "7": 1
@@ -840,7 +840,7 @@
             "serviceableDemand": 6449.0
         }, 
         "49035112403": {
-            "area": null, 
+            "area": 5665126.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -848,7 +848,7 @@
             "serviceableDemand": 0
         }, 
         "49035112404": {
-            "area": null, 
+            "area": 2210481.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -856,7 +856,7 @@
             "serviceableDemand": 0
         }, 
         "49035112501": {
-            "area": null, 
+            "area": 1692486.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -864,7 +864,7 @@
             "serviceableDemand": 0
         }, 
         "49035112502": {
-            "area": null, 
+            "area": 2769058.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -872,7 +872,7 @@
             "serviceableDemand": 0
         }, 
         "49035112503": {
-            "area": null, 
+            "area": 1949289.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -880,7 +880,7 @@
             "serviceableDemand": 0
         }, 
         "49035112604": {
-            "area": null, 
+            "area": 2634581.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "7": 1
@@ -890,7 +890,7 @@
             "serviceableDemand": 5101.0
         }, 
         "49035112605": {
-            "area": null, 
+            "area": 6277023.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "18": 1, 
@@ -901,7 +901,7 @@
             "serviceableDemand": 6795.0
         }, 
         "49035112608": {
-            "area": null, 
+            "area": 2451424.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "7": 1
@@ -911,7 +911,7 @@
             "serviceableDemand": 5276.0
         }, 
         "49035112609": {
-            "area": null, 
+            "area": 3308464.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -919,7 +919,7 @@
             "serviceableDemand": 0
         }, 
         "49035112610": {
-            "area": null, 
+            "area": 2101415.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "7": 1
@@ -929,7 +929,7 @@
             "serviceableDemand": 4316.0
         }, 
         "49035112611": {
-            "area": null, 
+            "area": 2612240.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -937,7 +937,7 @@
             "serviceableDemand": 0
         }, 
         "49035112612": {
-            "area": null, 
+            "area": 2580700.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "7": 1
@@ -947,7 +947,7 @@
             "serviceableDemand": 4096.0
         }, 
         "49035112613": {
-            "area": null, 
+            "area": 2963186.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "7": 1
@@ -957,7 +957,7 @@
             "serviceableDemand": 4915.0
         }, 
         "49035112614": {
-            "area": null, 
+            "area": 2557070.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -965,7 +965,7 @@
             "serviceableDemand": 0
         }, 
         "49035112615": {
-            "area": null, 
+            "area": 1201883.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -973,7 +973,7 @@
             "serviceableDemand": 0
         }, 
         "49035112616": {
-            "area": null, 
+            "area": 2468556.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "20": 1
@@ -983,7 +983,7 @@
             "serviceableDemand": 4533.0
         }, 
         "49035112617": {
-            "area": null, 
+            "area": 2976886.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "20": 1
@@ -993,7 +993,7 @@
             "serviceableDemand": 3551.0
         }, 
         "49035112618": {
-            "area": null, 
+            "area": 2334617.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -1001,7 +1001,7 @@
             "serviceableDemand": 0
         }, 
         "49035112619": {
-            "area": null, 
+            "area": 1662335.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -1009,7 +1009,7 @@
             "serviceableDemand": 0
         }, 
         "49035112700": {
-            "area": null, 
+            "area": 2960324.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "7": 1
@@ -1019,7 +1019,7 @@
             "serviceableDemand": 4821.0
         }, 
         "49035112804": {
-            "area": null, 
+            "area": 2565665.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "18": 1, 
@@ -1030,7 +1030,7 @@
             "serviceableDemand": 5602.0
         }, 
         "49035112805": {
-            "area": null, 
+            "area": 2807400.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "18": 1, 
@@ -1041,7 +1041,7 @@
             "serviceableDemand": 5343.0
         }, 
         "49035112810": {
-            "area": null, 
+            "area": 25137702.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -1049,7 +1049,7 @@
             "serviceableDemand": 0
         }, 
         "49035112812": {
-            "area": null, 
+            "area": 2856014.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "18": 1, 
@@ -1060,7 +1060,7 @@
             "serviceableDemand": 5670.0
         }, 
         "49035112813": {
-            "area": null, 
+            "area": 4166819.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -1068,7 +1068,7 @@
             "serviceableDemand": 0
         }, 
         "49035112814": {
-            "area": null, 
+            "area": 5325426.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "20": 1
@@ -1078,7 +1078,7 @@
             "serviceableDemand": 4696.0
         }, 
         "49035112815": {
-            "area": null, 
+            "area": 40133780.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -1086,7 +1086,7 @@
             "serviceableDemand": 0
         }, 
         "49035112816": {
-            "area": null, 
+            "area": 6355894.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -1094,7 +1094,7 @@
             "serviceableDemand": 0
         }, 
         "49035112817": {
-            "area": null, 
+            "area": 17371102.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -1102,7 +1102,7 @@
             "serviceableDemand": 0
         }, 
         "49035112818": {
-            "area": null, 
+            "area": 3095843.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "16": 1
@@ -1112,7 +1112,7 @@
             "serviceableDemand": 3840.0
         }, 
         "49035112819": {
-            "area": null, 
+            "area": 5272397.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "19": 1
@@ -1122,7 +1122,7 @@
             "serviceableDemand": 7040.0
         }, 
         "49035112820": {
-            "area": null, 
+            "area": 12040345.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -1130,7 +1130,7 @@
             "serviceableDemand": 0
         }, 
         "49035112821": {
-            "area": null, 
+            "area": 10938034.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "19": 1
@@ -1140,7 +1140,7 @@
             "serviceableDemand": 6257.0
         }, 
         "49035112822": {
-            "area": null, 
+            "area": 2546539.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "18": 1, 
@@ -1151,7 +1151,7 @@
             "serviceableDemand": 4709.0
         }, 
         "49035112823": {
-            "area": null, 
+            "area": 3591640.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "18": 1
@@ -1161,7 +1161,7 @@
             "serviceableDemand": 4493.0
         }, 
         "49035112904": {
-            "area": null, 
+            "area": 2150254.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "10": 1, 
@@ -1172,7 +1172,7 @@
             "serviceableDemand": 6731.0
         }, 
         "49035112905": {
-            "area": null, 
+            "area": 2599029.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -1180,7 +1180,7 @@
             "serviceableDemand": 0
         }, 
         "49035112907": {
-            "area": null, 
+            "area": 2597569.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -1188,7 +1188,7 @@
             "serviceableDemand": 0
         }, 
         "49035112912": {
-            "area": null, 
+            "area": 1972468.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "9": 1
@@ -1198,7 +1198,7 @@
             "serviceableDemand": 2769.0
         }, 
         "49035112913": {
-            "area": null, 
+            "area": 2605449.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -1206,7 +1206,7 @@
             "serviceableDemand": 0
         }, 
         "49035112914": {
-            "area": null, 
+            "area": 2558401.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -1214,7 +1214,7 @@
             "serviceableDemand": 0
         }, 
         "49035112916": {
-            "area": null, 
+            "area": 1844722.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -1222,7 +1222,7 @@
             "serviceableDemand": 0
         }, 
         "49035112917": {
-            "area": null, 
+            "area": 2529299.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -1230,7 +1230,7 @@
             "serviceableDemand": 0
         }, 
         "49035112918": {
-            "area": null, 
+            "area": 2603149.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -1238,7 +1238,7 @@
             "serviceableDemand": 0
         }, 
         "49035112920": {
-            "area": null, 
+            "area": 2544081.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -1246,7 +1246,7 @@
             "serviceableDemand": 0
         }, 
         "49035112921": {
-            "area": null, 
+            "area": 3362187.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -1254,7 +1254,7 @@
             "serviceableDemand": 0
         }, 
         "49035113007": {
-            "area": null, 
+            "area": 2784627.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "8": 1
@@ -1264,7 +1264,7 @@
             "serviceableDemand": 5005.0
         }, 
         "49035113008": {
-            "area": null, 
+            "area": 4222883.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -1272,7 +1272,7 @@
             "serviceableDemand": 0
         }, 
         "49035113010": {
-            "area": null, 
+            "area": 4924805.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -1280,7 +1280,7 @@
             "serviceableDemand": 0
         }, 
         "49035113011": {
-            "area": null, 
+            "area": 6137888.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "17": 1, 
@@ -1291,7 +1291,7 @@
             "serviceableDemand": 5806.0
         }, 
         "49035113012": {
-            "area": null, 
+            "area": 6228463.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "18": 1
@@ -1301,7 +1301,7 @@
             "serviceableDemand": 4854.0
         }, 
         "49035113013": {
-            "area": null, 
+            "area": 4885347.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "17": 1
@@ -1311,7 +1311,7 @@
             "serviceableDemand": 4990.0
         }, 
         "49035113014": {
-            "area": null, 
+            "area": 3037482.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "17": 1
@@ -1321,7 +1321,7 @@
             "serviceableDemand": 3930.0
         }, 
         "49035113016": {
-            "area": null, 
+            "area": 7262224.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -1329,7 +1329,7 @@
             "serviceableDemand": 0
         }, 
         "49035113017": {
-            "area": null, 
+            "area": 3875616.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "16": 1, 
@@ -1340,7 +1340,7 @@
             "serviceableDemand": 6689.0
         }, 
         "49035113019": {
-            "area": null, 
+            "area": 5927226.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "17": 1
@@ -1350,7 +1350,7 @@
             "serviceableDemand": 5973.0
         }, 
         "49035113020": {
-            "area": null, 
+            "area": 7373553.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "17": 1, 
@@ -1361,7 +1361,7 @@
             "serviceableDemand": 11672.0
         }, 
         "49035113101": {
-            "area": null, 
+            "area": 4786632.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "9": 1
@@ -1371,7 +1371,7 @@
             "serviceableDemand": 7158.0
         }, 
         "49035113102": {
-            "area": null, 
+            "area": 2514602.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "8": 1
@@ -1381,7 +1381,7 @@
             "serviceableDemand": 3892.0
         }, 
         "49035113105": {
-            "area": null, 
+            "area": 148863917.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -1389,7 +1389,7 @@
             "serviceableDemand": 0
         }, 
         "49035113107": {
-            "area": null, 
+            "area": 18632508.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -1397,7 +1397,7 @@
             "serviceableDemand": 0
         }, 
         "49035113108": {
-            "area": null, 
+            "area": 1820563.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "8": 1, 
@@ -1408,7 +1408,7 @@
             "serviceableDemand": 4444.0
         }, 
         "49035113305": {
-            "area": null, 
+            "area": 7436885.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "22": 1
@@ -1418,7 +1418,7 @@
             "serviceableDemand": 7665.0
         }, 
         "49035113306": {
-            "area": null, 
+            "area": 1790092.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "10": 1, 
@@ -1429,7 +1429,7 @@
             "serviceableDemand": 6082.0
         }, 
         "49035113307": {
-            "area": null, 
+            "area": 5047398.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "11": 1, 
@@ -1440,7 +1440,7 @@
             "serviceableDemand": 6979.0
         }, 
         "49035113308": {
-            "area": null, 
+            "area": 1645696.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "10": 1, 
@@ -1452,7 +1452,7 @@
             "serviceableDemand": 5079.0
         }, 
         "49035113309": {
-            "area": null, 
+            "area": 1888734.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "10": 1, 
@@ -1463,7 +1463,7 @@
             "serviceableDemand": 4928.0
         }, 
         "49035113310": {
-            "area": null, 
+            "area": 1526345.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "10": 1, 
@@ -1474,7 +1474,7 @@
             "serviceableDemand": 3015.0
         }, 
         "49035113406": {
-            "area": null, 
+            "area": 1959462.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "10": 1, 
@@ -1485,7 +1485,7 @@
             "serviceableDemand": 6746.0
         }, 
         "49035113407": {
-            "area": null, 
+            "area": 10536229.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -1493,7 +1493,7 @@
             "serviceableDemand": 0
         }, 
         "49035113408": {
-            "area": null, 
+            "area": 2604663.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "21": 1
@@ -1503,7 +1503,7 @@
             "serviceableDemand": 6644.0
         }, 
         "49035113409": {
-            "area": null, 
+            "area": 2597478.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -1511,7 +1511,7 @@
             "serviceableDemand": 0
         }, 
         "49035113410": {
-            "area": null, 
+            "area": 2601137.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "10": 1, 
@@ -1522,7 +1522,7 @@
             "serviceableDemand": 6508.0
         }, 
         "49035113411": {
-            "area": null, 
+            "area": 1299832.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "10": 1, 
@@ -1533,7 +1533,7 @@
             "serviceableDemand": 2689.0
         }, 
         "49035113412": {
-            "area": null, 
+            "area": 1302309.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -1541,7 +1541,7 @@
             "serviceableDemand": 0
         }, 
         "49035113413": {
-            "area": null, 
+            "area": 2598375.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "10": 1
@@ -1551,7 +1551,7 @@
             "serviceableDemand": 5605.0
         }, 
         "49035113505": {
-            "area": null, 
+            "area": 2686783.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "10": 1, 
@@ -1562,7 +1562,7 @@
             "serviceableDemand": 6796.0
         }, 
         "49035113509": {
-            "area": null, 
+            "area": 2151319.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "11": 1
@@ -1572,7 +1572,7 @@
             "serviceableDemand": 6332.0
         }, 
         "49035113510": {
-            "area": null, 
+            "area": 1854246.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "10": 1, 
@@ -1583,7 +1583,7 @@
             "serviceableDemand": 3251.0
         }, 
         "49035113511": {
-            "area": null, 
+            "area": 1542807.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "10": 1, 
@@ -1594,7 +1594,7 @@
             "serviceableDemand": 3675.0
         }, 
         "49035113512": {
-            "area": null, 
+            "area": 1868495.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "11": 1
@@ -1604,7 +1604,7 @@
             "serviceableDemand": 3510.0
         }, 
         "49035113513": {
-            "area": null, 
+            "area": 2804018.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "10": 1, 
@@ -1615,7 +1615,7 @@
             "serviceableDemand": 5631.0
         }, 
         "49035113514": {
-            "area": null, 
+            "area": 1843537.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "11": 1
@@ -1625,7 +1625,7 @@
             "serviceableDemand": 5741.0
         }, 
         "49035113515": {
-            "area": null, 
+            "area": 3549566.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -1633,7 +1633,7 @@
             "serviceableDemand": 0
         }, 
         "49035113520": {
-            "area": null, 
+            "area": 2048219.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "10": 1, 
@@ -1644,7 +1644,7 @@
             "serviceableDemand": 3983.0
         }, 
         "49035113521": {
-            "area": null, 
+            "area": 2646558.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "10": 1, 
@@ -1655,7 +1655,7 @@
             "serviceableDemand": 6489.0
         }, 
         "49035113522": {
-            "area": null, 
+            "area": 1995673.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "10": 1, 
@@ -1666,7 +1666,7 @@
             "serviceableDemand": 3293.0
         }, 
         "49035113523": {
-            "area": null, 
+            "area": 2636487.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "10": 1
@@ -1676,7 +1676,7 @@
             "serviceableDemand": 6255.0
         }, 
         "49035113525": {
-            "area": null, 
+            "area": 17212766.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "21": 1
@@ -1686,7 +1686,7 @@
             "serviceableDemand": 7102.0
         }, 
         "49035113526": {
-            "area": null, 
+            "area": 5803104.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "21": 1
@@ -1696,7 +1696,7 @@
             "serviceableDemand": 5266.0
         }, 
         "49035113527": {
-            "area": null, 
+            "area": 1220111.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "9": 1
@@ -1706,7 +1706,7 @@
             "serviceableDemand": 4566.0
         }, 
         "49035113528": {
-            "area": null, 
+            "area": 1221416.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "9": 1
@@ -1716,7 +1716,7 @@
             "serviceableDemand": 5320.0
         }, 
         "49035113532": {
-            "area": null, 
+            "area": 1294801.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "10": 1
@@ -1726,7 +1726,7 @@
             "serviceableDemand": 3177.0
         }, 
         "49035113533": {
-            "area": null, 
+            "area": 3013192.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -1734,7 +1734,7 @@
             "serviceableDemand": 0
         }, 
         "49035113534": {
-            "area": null, 
+            "area": 4053263.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "9": 1
@@ -1744,7 +1744,7 @@
             "serviceableDemand": 7303.0
         }, 
         "49035113535": {
-            "area": null, 
+            "area": 6607000.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "9": 1
@@ -1754,7 +1754,7 @@
             "serviceableDemand": 7020.0
         }, 
         "49035113536": {
-            "area": null, 
+            "area": 1261159.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "10": 1, 
@@ -1765,7 +1765,7 @@
             "serviceableDemand": 4158.0
         }, 
         "49035113537": {
-            "area": null, 
+            "area": 1302678.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "10": 1, 
@@ -1776,7 +1776,7 @@
             "serviceableDemand": 3582.0
         }, 
         "49035113538": {
-            "area": null, 
+            "area": 984728.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "10": 1
@@ -1786,7 +1786,7 @@
             "serviceableDemand": 3277.0
         }, 
         "49035113539": {
-            "area": null, 
+            "area": 1619314.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "10": 1
@@ -1796,7 +1796,7 @@
             "serviceableDemand": 4723.0
         }, 
         "49035113600": {
-            "area": null, 
+            "area": 1938058.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "10": 1, 
@@ -1807,7 +1807,7 @@
             "serviceableDemand": 5291.0
         }, 
         "49035113701": {
-            "area": null, 
+            "area": 1230178.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "10": 1, 
@@ -1818,7 +1818,7 @@
             "serviceableDemand": 4074.0
         }, 
         "49035113702": {
-            "area": null, 
+            "area": 864452.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "10": 1, 
@@ -1829,7 +1829,7 @@
             "serviceableDemand": 2760.0
         }, 
         "49035113801": {
-            "area": null, 
+            "area": 1594708.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "10": 1
@@ -1839,7 +1839,7 @@
             "serviceableDemand": 5775.0
         }, 
         "49035113802": {
-            "area": null, 
+            "area": 1605841.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "10": 1
@@ -1849,7 +1849,7 @@
             "serviceableDemand": 4015.0
         }, 
         "49035113803": {
-            "area": null, 
+            "area": 2999966.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "10": 1, 
@@ -1860,7 +1860,7 @@
             "serviceableDemand": 8675.0
         }, 
         "49035113903": {
-            "area": null, 
+            "area": 3953202.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "13": 1
@@ -1870,7 +1870,7 @@
             "serviceableDemand": 4933.0
         }, 
         "49035113904": {
-            "area": null, 
+            "area": 1948077.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "13": 1
@@ -1880,7 +1880,7 @@
             "serviceableDemand": 5657.0
         }, 
         "49035113905": {
-            "area": null, 
+            "area": 3909265.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "21": 1
@@ -1890,7 +1890,7 @@
             "serviceableDemand": 7316.0
         }, 
         "49035113906": {
-            "area": null, 
+            "area": 326070293.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -1898,7 +1898,7 @@
             "serviceableDemand": 0
         }, 
         "49035113907": {
-            "area": null, 
+            "area": 144193445.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -1906,7 +1906,7 @@
             "serviceableDemand": 0
         }, 
         "49035114000": {
-            "area": null, 
+            "area": 3153199.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -1914,7 +1914,7 @@
             "serviceableDemand": 0
         }, 
         "49035114100": {
-            "area": null, 
+            "area": 2408160.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "3": 1, 
@@ -1925,7 +1925,7 @@
             "serviceableDemand": 2389.0
         }, 
         "49035114200": {
-            "area": null, 
+            "area": 5002966.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -1933,7 +1933,7 @@
             "serviceableDemand": 0
         }, 
         "49035114300": {
-            "area": null, 
+            "area": 16637964.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -1941,7 +1941,7 @@
             "serviceableDemand": 0
         }, 
         "49035114500": {
-            "area": null, 
+            "area": 42852623.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -1949,7 +1949,7 @@
             "serviceableDemand": 0
         }, 
         "49035114600": {
-            "area": null, 
+            "area": 7619236.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "16": 1
@@ -1959,7 +1959,7 @@
             "serviceableDemand": 6998.0
         }, 
         "49035114700": {
-            "area": null, 
+            "area": 12959729.0, 
             "coverage": {
                 "facility2_service_areas": {
                     "1": 1
@@ -1969,7 +1969,7 @@
             "serviceableDemand": 4714.0
         }, 
         "49035114800": {
-            "area": null, 
+            "area": 24445432.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -1977,7 +1977,7 @@
             "serviceableDemand": 0
         }, 
         "49035115106": {
-            "area": null, 
+            "area": 71297644.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -1985,7 +1985,7 @@
             "serviceableDemand": 0
         }, 
         "49035115209": {
-            "area": null, 
+            "area": 25943916.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
@@ -1993,7 +1993,7 @@
             "serviceableDemand": 0
         }, 
         "49035980000": {
-            "area": null, 
+            "area": 40043901.0, 
             "coverage": {
                 "facility2_service_areas": {}
             }, 
