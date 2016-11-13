@@ -44,7 +44,7 @@ if __name__ == "__main__":
     # Create the mclp model
     # Maximize the total coverage (binary polygon) using at most 5 out of 8 facilities
     logger.info("Creating MCLP model...")
-    mclp = covering.create_mclp_model(binary_coverage_polygon, {"total": 5}, "mclp.lp")
+    mclp = covering.create_mclp_model(binary_coverage_polygon, {"total": 5})
     # Solve the model using GLPK
     logger.info("Solving MCLP...")
     mclp.solve(pulp.GLPK())

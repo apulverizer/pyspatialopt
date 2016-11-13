@@ -91,7 +91,7 @@ def merge_coverages(coverages):
     return master_coverage
 
 
-def create_mclp_model(coverage_dict, num_fac, model_file, delineator="$", use_serviceable_demand=False):
+def create_mclp_model(coverage_dict, num_fac, model_file=None, delineator="$", use_serviceable_demand=False):
     """
 
     Creates an MCLP model using the provided coverage and parameters
@@ -113,7 +113,7 @@ def create_mclp_model(coverage_dict, num_fac, model_file, delineator="$", use_se
         demand_var = "demand"
     if not isinstance(coverage_dict, dict):
         raise TypeError("coverage_dict is not a dictionary")
-    if not (isinstance(model_file, str)):
+    if model_file and not (isinstance(model_file, str)):
         raise TypeError("model_file is not a string")
     if not isinstance(num_fac, dict):
         raise TypeError("num_fac is not a dictionary")
@@ -155,11 +155,12 @@ def create_mclp_model(coverage_dict, num_fac, model_file, delineator="$", use_se
             for facility_id in coverage_dict["facilities"][facility_type]:
                 to_sum.append(facility_vars[facility_type][facility_id])
             prob += pulp.lpSum(to_sum) <= num_fac[facility_type], "Num{}".format(facility_type)
-    prob.writeLP(model_file)
+    if model_file:
+        prob.writeLP(model_file)
     return prob
 
 
-def create_mclp_cc_model(coverage_dict, num_fac, model_file, delineator="$", use_serviceable_demand=False):
+def create_mclp_cc_model(coverage_dict, num_fac, model_file=None, delineator="$", use_serviceable_demand=False):
     """
 
         Creates an MCLPCC model using the provided coverage and parameters
@@ -181,7 +182,7 @@ def create_mclp_cc_model(coverage_dict, num_fac, model_file, delineator="$", use
         demand_var = "demand"
     if not isinstance(coverage_dict, dict):
         raise TypeError("coverage_dict is not a dictionary")
-    if not (isinstance(model_file, str)):
+    if model_file and not (isinstance(model_file, str)):
         raise TypeError("model_file is not a string")
     if not isinstance(num_fac, dict):
         raise TypeError("num_fac is not a dictionary")
@@ -225,11 +226,12 @@ def create_mclp_cc_model(coverage_dict, num_fac, model_file, delineator="$", use
             for facility_id in coverage_dict["facilities"][facility_type]:
                 to_sum.append(facility_vars[facility_type][facility_id])
             prob += pulp.lpSum(to_sum) <= num_fac[facility_type], "Num{}".format(facility_type)
-    prob.writeLP(model_file)
+    if model_file:
+        prob.writeLP(model_file)
     return prob
 
 
-def create_threshold_model(coverage_dict, psi, model_file, delineator="$", use_serviceable_demand=False):
+def create_threshold_model(coverage_dict, psi, model_file=None, delineator="$", use_serviceable_demand=False):
     """
     Creates a threshold model using the provided coverage and parameters
     Writes a .lp file which can be solved with Gurobi
@@ -256,7 +258,7 @@ def create_threshold_model(coverage_dict, psi, model_file, delineator="$", use_s
         raise TypeError("backup weight is not float or int")
     if psi > 100.0 or psi < 0.0:
         raise ValueError("psi weight must be between 100 and 0")
-    if not (isinstance(model_file, str)):
+    if model_file and not (isinstance(model_file, str)):
         raise TypeError("model_file is not a string")
     if not isinstance(delineator, str):
         raise TypeError("delineator is not a string")
@@ -296,11 +298,12 @@ def create_threshold_model(coverage_dict, psi, model_file, delineator="$", use_s
         scaled_demand = float(100 / sum_demand) * coverage_dict["demand"][demand_id][demand_var]
         to_sum.append(scaled_demand * demand_vars[demand_id])
     prob += pulp.lpSum(to_sum) >= psi
-    prob.writeLP(model_file)
+    if model_file:
+        prob.writeLP(model_file)
     return prob
 
 
-def create_cc_threshold_model(coverage_dict, psi, model_file, delineator="$", use_serviceable_demand=False):
+def create_cc_threshold_model(coverage_dict, psi, model_file=None, delineator="$", use_serviceable_demand=False):
     """
 
     Creates a complementary coverage threshold model using the provided coverage and parameters
@@ -328,7 +331,7 @@ def create_cc_threshold_model(coverage_dict, psi, model_file, delineator="$", us
         raise TypeError("backup weight is not float or int")
     if psi > 100.0 or psi < 0.0:
         raise ValueError("psi weight must be between 100 and 0")
-    if not (isinstance(model_file, str)):
+    if model_file and not (isinstance(model_file, str)):
         raise TypeError("model_file is not a string")
     if not isinstance(delineator, str):
         raise TypeError("delineator is not a string")
@@ -369,11 +372,12 @@ def create_cc_threshold_model(coverage_dict, psi, model_file, delineator="$", us
         scaled_demand = float(100 / sum_demand)
         to_sum.append(scaled_demand * demand_vars[demand_id])
     prob += pulp.lpSum(to_sum) >= psi, "Threshold"
-    prob.writeLP(model_file)
+    if model_file:
+        prob.writeLP(model_file)
     return prob
 
 
-def create_backup_model(coverage_dict, num_fac, model_file, delineator="$", use_serviceable_demand=False):
+def create_backup_model(coverage_dict, num_fac, model_file=None, delineator="$", use_serviceable_demand=False):
     """
     Creates a backup coverage model using the provided coverage and parameters
     Writes a .lp file which can be solved with Gurobi
@@ -401,7 +405,7 @@ def create_backup_model(coverage_dict, num_fac, model_file, delineator="$", use_
         raise TypeError("coverage_dict is not a dictionary")
     if not isinstance(num_fac, dict):
         raise TypeError("num_fac is not a dictionary")
-    if not (isinstance(model_file, str)):
+    if model_file and not (isinstance(model_file, str)):
         raise TypeError("model_file is not a string")
     if not isinstance(delineator, str):
         raise TypeError("delineator is not a string")
@@ -441,11 +445,12 @@ def create_backup_model(coverage_dict, num_fac, model_file, delineator="$", use_
             for facility_id in coverage_dict["facilities"][facility_type]:
                 to_sum.append(facility_vars[facility_type][facility_id])
             prob += pulp.lpSum(to_sum) <= num_fac[facility_type], "Num{}".format(facility_type)
-    prob.writeLP(model_file)
+    if model_file:
+        prob.writeLP(model_file)
     return prob
 
 
-def create_lscp_model(coverage_dict, model_file, delineator="$", ):
+def create_lscp_model(coverage_dict, model_file=None, delineator="$", ):
     """
     Creates a LSCP (Location set covering problem) using the provided coverage and
     parameters. Writes a .lp file which can be solved with Gurobi
@@ -461,7 +466,7 @@ def create_lscp_model(coverage_dict, model_file, delineator="$", ):
     validate_coverage(coverage_dict, ["coverage"], ["binary"])
     if not isinstance(coverage_dict, dict):
         raise TypeError("coverage_dict is not a dictionary")
-    if not (isinstance(model_file, str)):
+    if model_file and not (isinstance(model_file, str)):
         raise TypeError("model_file is not a string")
     if not isinstance(delineator, str):
         raise TypeError("delineator is not a string")
@@ -489,12 +494,18 @@ def create_lscp_model(coverage_dict, model_file, delineator="$", ):
         for facility_type in coverage_dict["demand"][demand_id]["coverage"]:
             for facility_id in coverage_dict["demand"][demand_id]["coverage"][facility_type]:
                 to_sum.append(facility_vars[facility_type][facility_id])
+        # Hack to get model to "solve" when infeasible with GLPK.
+        # Pulp will automatically add dummy variables when the sum is empty, since these are all the same name,
+        # it seems that GLPK doesn't read the lp problem properly and fails
+        if not to_sum:
+            to_sum = [pulp.LpVariable("__dummy{}{}".format(delineator, demand_id), 0, 0, pulp.LpInteger)]
         prob += pulp.lpSum(to_sum) >= 1, "D{}".format(demand_id)
-    prob.writeLP(model_file)
+    if model_file:
+        prob.writeLP(model_file)
     return prob
 
 
-def create_traumah_model(coverage_dict, num_ad, num_tc, model_file, delineator="$"):
+def create_traumah_model(coverage_dict, num_ad, num_tc, model_file=None, delineator="$"):
     """
     Creates a TRAUMAH (Trauma center and air depot location model) using the provided coverage and
     parameters. Writes a .lp file which can be solved with Gurobi
@@ -512,7 +523,7 @@ def create_traumah_model(coverage_dict, num_ad, num_tc, model_file, delineator="
     demand_var = "demand"
     if not isinstance(coverage_dict, dict):
         raise TypeError("coverage_dict is not a dictionary")
-    if not (isinstance(model_file, str)):
+    if model_file and not (isinstance(model_file, str)):
         raise TypeError("model_file is not a string")
     if not isinstance(num_ad, int):
         raise TypeError("num_ad is not an integer")
@@ -586,11 +597,12 @@ def create_traumah_model(coverage_dict, num_ad, num_tc, model_file, delineator="
         # air constraints
         prob += adtc_vars[adtc_id] - facility_vars["AirDepot"][adtc_id.split("$")[1]] <= 0, "AIR_{}".format(adtc_id)
 
-    prob.writeLP(model_file)
+    if model_file:
+        prob.writeLP(model_file)
     return prob
 
 
-def create_bclpcc_model(coverage_dict, num_fac, backup_weight, model_file, delineator="$",
+def create_bclpcc_model(coverage_dict, num_fac, backup_weight, model_file=None, delineator="$",
                             use_serviceable_demand=False):
     """
     Creates a bclpcc coverage model using the provided coverage dictionary
@@ -618,7 +630,7 @@ def create_bclpcc_model(coverage_dict, num_fac, backup_weight, model_file, delin
         raise TypeError("backup weight is not float or int")
     if backup_weight > 1.0 or backup_weight < 0.0:
         raise ValueError("Backup weight must be between 0 and 1")
-    if not (isinstance(model_file, str)):
+    if model_file and not (isinstance(model_file, str)):
         raise TypeError("model_file is not a string")
     if not isinstance(delineator, str):
         raise TypeError("delineator is not a string")
@@ -672,5 +684,6 @@ def create_bclpcc_model(coverage_dict, num_fac, backup_weight, model_file, delin
             for facility_id in coverage_dict["facilities"][facility_type]:
                 to_sum.append(facility_vars[facility_type][facility_id])
             prob += pulp.lpSum(to_sum) <= num_fac[facility_type], "Num{}".format(facility_type)
-    prob.writeLP(model_file)
+    if model_file:
+        prob.writeLP(model_file)
     return prob

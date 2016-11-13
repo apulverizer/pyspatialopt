@@ -47,7 +47,7 @@ if __name__ == "__main__":
     # Create the mclp model
     # Maximize the total coverage (binary polygon) using at most 5 out of 8 facilities
     logger.info("Creating MCLP model...")
-    lscp = covering.create_lscp_model(total_binary_coverage, "lscp.lp")
+    lscp = covering.create_lscp_model(total_binary_coverage)
     # Solve the model using GLPK
     logger.info("Solving LSCP...")
     lscp.solve(pulp.GLPK())

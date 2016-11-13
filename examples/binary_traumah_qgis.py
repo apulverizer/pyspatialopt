@@ -37,7 +37,7 @@ if __name__ == "__main__":
                                                                  tc_layer_id_field="ID", ad_layer_id_field="ID")
     # Create the trauma Pulp linear programming problem
     # Use 5 Air Depot (Helicopter launch pads) and 10 Trauma Centers
-    traumah = covering.create_traumah_model(coverage, 5, 10, "traumah.lp")
+    traumah = covering.create_traumah_model(coverage, 5, 10)
 
     # Solve the model using GLPK
     logger.info("Solving TRAUMAH...")

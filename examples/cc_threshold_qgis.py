@@ -34,7 +34,7 @@ if __name__ == "__main__":
 
     # Create the model, minimize the number of facilities that still results in 80 percent coverage
     logger.info("Creating complemenatary coverage threshold model...")
-    ccthreshold = covering.create_cc_threshold_model(partial_coverage2, 80, "ccthreshold.lp")
+    ccthreshold = covering.create_cc_threshold_model(partial_coverage2, 80)
     # Solve the model
     logger.info("Solving CC threshold model...")
     ccthreshold.solve(pulp.GLPK())
