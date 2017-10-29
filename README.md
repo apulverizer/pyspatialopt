@@ -33,7 +33,7 @@ The following models are supported:
  * The Trauma Resource Allocation Model for Ambulances and Hospitals (TRAUMAH)
     * Branas, C. C., MacKenzie, E. J., & ReVelle, C. S. (2000). A trauma resource allocation model for ambulances and hospitals. Health Services Research, 35(2), 489.
  
-#Workflow
+## Workflow
 1. Load a spatial data into a feature (vector) layer
 2. Create a coverage(s) dictionary/json object by performing spatial operations to determine which facilities cover which demand areas (overlay, intersect ...)
 3. Merge any coverages created, if you want to incorporate multiple facility types (optional)
@@ -42,7 +42,7 @@ The following models are supported:
 6. Solve the model using whatever tools are supported py PuLP (Gurobi, GLPK...)
 7. Do something with the results (Map them, get stats...)
 
-#Example usage
+## Example usage
 The map shown above was derived from the results of this example.
 
 ```python
@@ -72,7 +72,7 @@ The map shown above was derived from the results of this example.
                                                        facility_service_areas_fl)
 ```
  
-#Installation
+## Installation
 
 **Note I have only tested the installation and funcationality of the library on Windows 10 though I see no reason why it won't work on \*nix and OSX systems.**
 
