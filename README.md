@@ -24,12 +24,11 @@ The following models are supported:
     * Church, Richard, and Alan Murray. 2009. Coverage. In Business Site Selection, Location Analysis, and GIS. Hoboken, New Jersey: Wiley.
     * Tong, D. (2012). Regional coverage maximization: a new model to account implicitly for complementary coverage. Geographical Analysis, 44(1), 1-14.
  * Backup Coverage Location Problem (BCLP)
-    * Hogan, Kathleen, and Charles Revelle. 1986. Concepts and Applications of Backup Coverage. Management Science 32 (11):1434-1444.
+    * Hogan, Kathleen, and Charles Revelle. 1986. Concepts and Applications of Backup Coverage. Management Science 32 (11), 1434-1444.
  * Location Set Covering Problem (LSCP)
-    * Toregas, Constantine, et al. "The location of emergency service facilities." Operations Research 19.6 (1971): 1363-1373.
+    * Toregas, Constantine, et al (1971). "The location of emergency service facilities." Operations Research 19.6, 1363-1373.
  * Backup Coverage Location Problem (BCLPCC)
-    * Pulver, Aaron and Ran Wei. Presentation given at AAG 2016. San Fransico, CA.
-    * Paper in review
+    * Pulver, Aaron, and  Ran Wei (2018). "Optimizing the spatial location of medical drones". Applied Geography 90(1), 9-16.
  * The Trauma Resource Allocation Model for Ambulances and Hospitals (TRAUMAH)
     * Branas, C. C., MacKenzie, E. J., & ReVelle, C. S. (2000). A trauma resource allocation model for ambulances and hospitals. Health Services Research, 35(2), 489.
  
