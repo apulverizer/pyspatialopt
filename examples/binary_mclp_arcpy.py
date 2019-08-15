@@ -17,14 +17,19 @@ if __name__ == "__main__":
     sh = logging.StreamHandler(sys.stdout)
     sh.setFormatter(formatter)
     logger.addHandler(sh)
-
+    #import os
+    #print(os.getcwd())
+    import os
+    scriptDir = os.path.dirname(os.path.realpath(__file__))
+    
     # Read the demand polygon layer
     # Demand polygon shapefile has 212 polygons each where each feature has a demand (population) and unique identifier (GEOID10)
-    demand_polygon_fl = arcpy.MakeFeatureLayer_management(r"../sample_data/demand_polygon.shp").getOutput(0)
+    #demand_polygon_fl = arcpy.MakeFeatureLayer_management(r"../sample_data/demand_polygon.shp").getOutput(0)
+    demand_polygon_fl = arcpy.MakeFeatureLayer_management(os.path.join(scriptDir, r"../sample_data/demand_polygon.shp")).getOutput(0)
     # Read the facility service area layer
     # Facility service area polygon layer has 8 polygons, where each feature has a unique identifier (ORIG_ID)
-    facility_service_areas_fl = arcpy.MakeFeatureLayer_management(
-        r"../sample_data/facility_service_areas.shp").getOutput(0)
+    facility_service_areas_fl = arcpy.MakeFeatureLayer_management(os.path.join(scriptDir, 
+        r"../sample_data/facility_service_areas.shp")).getOutput(0)
 
     # Create binary coverage (polygon) dictionary structure
     # Use population of each polygon as demand,
@@ -44,6 +49,7 @@ if __name__ == "__main__":
     # Get the unique ids of the 5 facilities chosen
     logger.info("Extracting results")
     ids = utilities.get_ids(mclp, "facility_service_areas")
+    
     # Generate a query that could be used as a definition query or selection in arcpy
     select_query = arcpy_analysis.generate_query(ids, unique_field_name="ORIG_ID")
     logger.info("Output query to use to generate maps is: {}".format(select_query))
