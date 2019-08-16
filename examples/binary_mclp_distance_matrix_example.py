@@ -25,13 +25,14 @@ if __name__ == "__main__":
     import os
     scriptDir = os.path.dirname(os.path.realpath(__file__))
 
-    # a distance matrix file (format of csv).
-    # should contain the following fields: facility_id, demand_id, demand, distance
+    # a distance matrix file (format of csv)
+    
     workspace_path = r"../sample_data"
     file_distance_matrix = r'service_area_demand_point_distance_matrix.csv'
     service_dist=5000
     num_facility=5
 
+    # This file should contain the following fields: facility_id, demand_id, demand, distance
     list_field_req = ["facility_id", "demand_id", "demand", "distance"]
 
     # do not change this variable unless you understand what it is 
@@ -50,7 +51,6 @@ if __name__ == "__main__":
             sys.exit(0)
     logger.info(dict_pairwise_distance[1])
 
-    # creat a coverage object. Need to write a new function
     dict_coverage = binary_mclp_distance_matrix.generate_binary_coverage_from_dist_matrix(list_dict_facility_demand_distance = dict_pairwise_distance, dl_id_field = "demand_id", fl_id_field = "facility_id", dist_threshold = service_dist, demand_field="demand", distance_field="distance", fl_variable_name=facility_variable_name)        
     
     # formulate model
@@ -61,16 +61,8 @@ if __name__ == "__main__":
     logger.info("Solving MCLP...")
     mclp.solve(pulp.GLPK())
 
-    #########################################
-    # Not completed
-    # reference: N:\SpOpt\PySpatialOpt_code\pso_mclp_lscp_wrapper.py mclp_solver_coverage_dict()
-
     # Get the unique ids of the facilities chosen
     logger.info("Extracting results")
-
-    # print elements of mclp
-    # for var in mclp.variables():
-    #     logger.info(var.name)
 
     # Get the id set of facilities chosen
     set_facility_id_chosen = set(utilities.get_ids(mclp, facility_variable_name))
@@ -85,20 +77,9 @@ if __name__ == "__main__":
         # if this demand_id is covered by any facility in ids
         if not set_facility_id_chosen.isdisjoint(demand_obj["coverage"]["facility"].keys()):
             total_demand_covered += demand_obj["demand"]
-        # for facility_id in ids:
-        #     if facility_id in dict_coverage["demand"][demand_id]["coverage"]["facility"]:
-        #         total_demand_covered += dict_coverage["demand"][demand_id]["demand"]
-        #         break
 
     logger.info("{0:.2f}% of demand is covered".format((100 * total_demand_covered) / dict_coverage["totalDemand"]))
 
-    # use the binary_mclp_distance_matrix function
+    # An easy way: use the binary_mclp_distance_matrix function
     result_coverage = binary_mclp_distance_matrix.binary_mclp_distance_matrix(file_distance_matrix = file_distance_matrix, service_dist = service_dist, num_facility = num_facility, workspace_path = workspace_path)
     logger.info(result_coverage)
-
-    # test using a simple case
-    # file_distance_matrix = "simple_case_distance_matrix.csv"
-    # service_dist = 10
-    # dict_num_facility_coverage = {1:5.0/15, 2:9.0/15, 3:12.0/15, 4:14.0/15, 5:15.0/15}
-    # for num_facility, coverage in dict_num_facility_coverage:
-    #     result_coverage = binary_mclp_distance_matrix(file_distance_matrix = file_distance_matrix, service_dist = service_dist, num_facility = num_facility)

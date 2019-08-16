@@ -5,16 +5,9 @@ import arcpy
 import pulp
 import csv
 import sys
-#from pyspatialopt.analysis import arcpy_analysis
-#import arcpy_analysis
+import os
 from pyspatialopt.models import utilities
 from pyspatialopt.models import covering
-#import utilities
-#import covering
-#import models.covering
-#import models.utilities
-
-import os
 
 def generate_binary_coverage_from_dist_matrix(list_dict_facility_demand_distance, dist_threshold, dl_id_field="demand_id", fl_id_field="facility_id", demand_field="demand", distance_field="distance", fl_variable_name=None):
     """
@@ -28,16 +21,11 @@ def generate_binary_coverage_from_dist_matrix(list_dict_facility_demand_distance
     :param fl_variable_name: (string) The name to use to represent the facility variable
     :return: (dictionary) A nested dictionary storing the coverage relationships
     """
-    # need to review the codes
-    # Check parameters so we get useful exceptions and messages
 
     if fl_variable_name is None:
         fl_variable_name = "facility"
 
-    logging.getLogger().info("Initializing facilities in output...")
-    
     output = {
-        # "version": version.__version__,
         "version": "1",
         "type": {
             "mode": "coverage",
@@ -68,12 +56,8 @@ def generate_binary_coverage_from_dist_matrix(list_dict_facility_demand_distance
     for facility_id in set_facility_id:
         output["facilities"][fl_variable_name].append(facility_id)
 
-    logging.getLogger().info("Determining binary coverage for each demand unit...")
-    # logic: iterate over the data frame. If the demand id is not in the output, add an empty item. Then, check out if the facility covers the demand. If so, add to the list of coverage.
-    # for each demand unit
+    # Determining binary coverage for each demand unit
     for row in list_dict_facility_demand_distance:
-        # row: [dl_id_field, fl_id_field, distance, demand_field]
-
         if float(row[distance_field]) <= dist_threshold:
             output["demand"][str(row[dl_id_field])]["serviceableDemand"] = \
                 output["demand"][str(row[dl_id_field])]["demand"]
@@ -102,7 +86,7 @@ def binary_mclp_distance_matrix(file_distance_matrix, service_dist, num_facility
         dict_pairwise_distance = [{k: v for k, v in row.items()}
         for row in csv.DictReader(csvfile, skipinitialspace=True)]
 
-    # test if it contains the required field
+    # The file should contain the required fields. If not, exit
     item_pairwise_distance = dict_pairwise_distance[1]
     
     for field in list_field_req:
@@ -114,25 +98,14 @@ def binary_mclp_distance_matrix(file_distance_matrix, service_dist, num_facility
     dict_coverage = generate_binary_coverage_from_dist_matrix(list_dict_facility_demand_distance = dict_pairwise_distance, dl_id_field = "demand_id", fl_id_field = "facility_id", dist_threshold = service_dist, demand_field="demand", distance_field="distance", fl_variable_name=facility_variable_name)        
     
     # formulate model
-    # logger.info("Creating MCLP model...")
     mclp = covering.create_mclp_model(dict_coverage, {"total": num_facility})
 
     # solve
-    # logger.info("Solving MCLP...")
     mclp.solve(pulp.GLPK())
-
-    # Get the unique ids of the facilities chosen
-
-    # print elements of mclp
-    # for var in mclp.variables():
-    #     logger.info(var.name)
 
     # Get the id set of facilities chosen
     set_facility_id_chosen = set(utilities.get_ids(mclp, facility_variable_name))
     
-    # logger.info("Set of facility ids: {}".format(set_facility_id_chosen))
-    # logger.info("Number of facilities selected: {}".format(len(set_facility_id_chosen)))
-
     # Query the demand covered from the dict_coverage
     total_demand_covered = 0.0
 
@@ -140,10 +113,6 @@ def binary_mclp_distance_matrix(file_distance_matrix, service_dist, num_facility
         # if this demand_id is covered by any facility in ids
         if not set_facility_id_chosen.isdisjoint(demand_obj["coverage"]["facility"].keys()):
             total_demand_covered += demand_obj["demand"]
-        # for facility_id in ids:
-        #     if facility_id in dict_coverage["demand"][demand_id]["coverage"]["facility"]:
-        #         total_demand_covered += dict_coverage["demand"][demand_id]["demand"]
-        #         break
     
     result_coverage = {"number_facility": num_facility,
     "number_facility_chosen": len(set_facility_id_chosen),
@@ -151,7 +120,7 @@ def binary_mclp_distance_matrix(file_distance_matrix, service_dist, num_facility
     "total_demand": dict_coverage["totalDemand"], 
     "percent_demand_coverage":(100 * total_demand_covered) / dict_coverage["totalDemand"]
     }
-	# logger.info("{0:.2f}% of demand is covered".format((100 * total_demand_covered) / dict_coverage["totalDemand"]))
+
     return result_coverage
     
 

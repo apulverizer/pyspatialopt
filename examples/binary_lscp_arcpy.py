@@ -18,7 +18,7 @@ if __name__ == "__main__":
     sh = logging.StreamHandler(sys.stdout)
     sh.setFormatter(formatter)
     logger.addHandler(sh)
-    scriptDir = os.path.dirname(os.path.realpath(__file__))
+    script_dir = os.path.dirname(os.path.realpath(__file__))
     # Read the demand polygon layer
     # Demand point shapefile has 212 points (centroids) each where each feature has a
     # demand (population) and unique identifier (GEOID10)

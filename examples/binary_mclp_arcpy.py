@@ -3,6 +3,7 @@ import logging
 import sys
 import arcpy
 import pulp
+import os
 from pyspatialopt.analysis import arcpy_analysis
 from pyspatialopt.models import utilities
 from pyspatialopt.models import covering
@@ -12,14 +13,12 @@ if __name__ == "__main__":
     # Initialize a logger so we get formatted output
     logger = logging.getLogger()
     logger.setLevel(logging.INFO)
-    formatter = formatter = logging.Formatter('%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
+    formatter = logging.Formatter('%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
     # setup stream handler to console output
     sh = logging.StreamHandler(sys.stdout)
     sh.setFormatter(formatter)
     logger.addHandler(sh)
-    #import os
-    #print(os.getcwd())
-    import os
+    
     scriptDir = os.path.dirname(os.path.realpath(__file__))
     
     # Read the demand polygon layer
