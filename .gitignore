@@ -72,10 +72,12 @@ target/
 
 #IDE folder
 .vscode
-examples/binary_lscp_arcpy.py
-examples/binary_mclp_arcpy.py
+
+examples/binary_lscp_arcpy_v2.py
+examples/binary_mclp_arcpy_v2.py
+pyspatialopt/models/test.py
 
 #Testing files
 examples/binary_mclp_test_1.ipynb
 examples/binary_mclp_distance_matrix.py
-pyspatialopt/models/test.py
+
