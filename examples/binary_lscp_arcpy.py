@@ -67,4 +67,3 @@ if __name__ == "__main__":
     total_coverage = arcpy_analysis.get_covered_demand(demand_point_fl, "Population", "binary",
                                                        facility_service_areas_fl, facility2_service_areas_fl)
     logger.info("{0:.2f}% of demand is covered".format((100 * total_coverage) / total_binary_coverage["totalDemand"]))
-    
