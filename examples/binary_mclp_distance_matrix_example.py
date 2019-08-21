@@ -5,7 +5,6 @@ import sys
 import arcpy
 import pulp
 import csv
-import sys
 import os
 from pyspatialopt.analysis import arcpy_analysis
 from pyspatialopt.models import utilities
@@ -22,12 +21,8 @@ if __name__ == "__main__":
     sh.setFormatter(formatter)
     logger.addHandler(sh)
 
-    import os
-    scriptDir = os.path.dirname(os.path.realpath(__file__))
-
-    # a distance matrix file (format of csv)
-
-    workspace_path = r"../sample_data"
+    script_dir = os.path.dirname(os.path.realpath(__file__))
+    workspace_path = os.path.join(script_dir, r"../sample_data")
     file_distance_matrix = r'service_area_demand_point_distance_matrix.csv'
     service_dist = 5000
     num_facility = 5

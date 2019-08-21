@@ -14,7 +14,7 @@ class MyTest(unittest.TestCase):
             print("A coverage of {0} is obtained with {1} facilities".format(res_coverag["percent_demand_coverage"], num_facility))
             self.assertAlmostEquals(res_coverag["percent_demand_coverage"], percent_coverage)
 
-    def test_simple_case(self):
+    def test_case_2(self):
         workspace_path = r"../sample_data"
         file_distance_matrix = "service_area_demand_point_distance_matrix.csv"
         service_dist = 5000
