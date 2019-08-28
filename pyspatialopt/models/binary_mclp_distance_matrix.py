@@ -98,8 +98,7 @@ def binary_mclp_distance_matrix(file_distance_matrix, service_dist, num_facility
 
     for field in list_field_req:
         if field not in item_pairwise_distance.keys():
-            print("Error: this field {} not found in the distance csv".format(field))
-            sys.exit(0)
+            raise ValueError("Error: this field {} not found in the distance csv".format(field))
 
     # creat a coverage object. Need to write a new function
     dict_coverage = generate_binary_coverage_from_dist_matrix(
