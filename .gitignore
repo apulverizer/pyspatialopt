@@ -69,3 +69,7 @@ target/
 .xml
 .shx
 .cpg
+
+#IDE folder
+.vscode
+
