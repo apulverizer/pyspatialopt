@@ -1,4 +1,9 @@
 # pyspatialopt
+
+**Note** A newer library that eventually will replace this is in progress [here](https://github.com/apulverizer/allagash/)
+
+----
+
 An open source python library for spatial optimization modeling. Be sure to check out the [wiki pages](https://github.com/apulverizer/pyspatialopt/wiki) for more information.
 
 This library can be used to generate and solve spatial optimization models (in the form of .lp or .mps files) from spatial data. 
